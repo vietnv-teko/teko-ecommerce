@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Modal from "./Modal";
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 export default {
-  title: "Modal",
-  component: Modal
+  title: 'Modal',
+  component: Modal,
 };
 
 export const Default = () => {
@@ -12,7 +12,7 @@ export const Default = () => {
     <>
       <button onClick={() => setOpen(true)}>Default Modal</button>
       <Modal
-        content={"Default Modal"}
+        content={'Default Modal'}
         open={open}
         onClose={() => setOpen(false)}
       />
