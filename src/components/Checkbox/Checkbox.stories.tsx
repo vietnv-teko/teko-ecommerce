@@ -8,5 +8,12 @@ export default {
 };
 
 export const Default = () => {
-  return <Checkbox checked onClick={action('clicked')} color="red" />;
+  return (
+    <Checkbox
+      checked
+      onClick={action('clicked')}
+      color="red"
+      label="checkbox 1"
+    />
+  );
 };

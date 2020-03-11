@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classname from 'classnames/bind';
 import styles from './RadioButton.module.css';
 let cx = classname.bind(styles);
 
 interface RadioButtonProps {
   className?: string;
-  checked?: boolean;
+  checked: boolean;
   color: string;
   onClick: () => void;
+  label: string;
 }
 const RadioButton: React.FC<RadioButtonProps> = props => {
-  const { className, checked, color, onClick } = props;
-  const [status, setStatus] = useState(checked || false);
+  const { className, checked, color, onClick, label } = props;
+  const [status, setStatus] = useState(checked);
+  useEffect(() => {
+    setStatus(checked);
+  }, [checked]);
   return (
     <div
-      className={cx(
-        'radio',
-        status ? 'checked' : '',
-        className ? className : '',
-      )}
+      className={cx('radio', className ? className : '')}
       onClick={() => {
-        setStatus(status ? false : true);
+        setStatus(true);
         onClick();
       }}
     >
@@ -42,6 +42,7 @@ const RadioButton: React.FC<RadioButtonProps> = props => {
           style={{ color: color }}
         ></i>
       )}
+      <div className={cx('radio-label')}>{label}</div>
     </div>
   );
 };

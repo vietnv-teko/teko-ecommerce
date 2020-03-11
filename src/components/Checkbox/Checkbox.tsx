@@ -8,21 +8,17 @@ interface CheckboxProps {
   checked?: boolean;
   onClick: () => void;
   color: string;
+  label: string;
 }
 const Checkbox: React.FC<CheckboxProps> = props => {
-  const { className, checked, onClick, color } = props;
+  const { className, checked, onClick, color, label } = props;
   const [status, setStatus] = useState(checked || false);
   const style = {
     color: color,
   };
   return (
     <div
-      className={cx(
-        'checkbox',
-        status ? 'checked' : '',
-        className ? className : '',
-      )}
-      // style={{  : colorEmpty  }}
+      className={cx('checkbox', className ? className : '')}
       onClick={() => {
         setStatus(status ? false : true);
         onClick();
@@ -46,6 +42,7 @@ const Checkbox: React.FC<CheckboxProps> = props => {
           style={style}
         ></i>
       )}
+      <div className={cx('checkbox-label')}>{label}</div>
     </div>
   );
 };

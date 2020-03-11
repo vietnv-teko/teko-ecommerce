@@ -1,12 +1,33 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
+import React, { useState } from 'react';
 import RadioButton from './RadioButton';
-
 export default {
   title: 'RadioButton',
   component: RadioButton,
 };
 
 export const Default = () => {
-  return <RadioButton color="red" checked onClick={action('clicked')} />;
+  const [selectedValue, setSelectedValue] = useState(1);
+
+  return (
+    <>
+      <RadioButton
+        color="red"
+        checked={selectedValue === 1}
+        onClick={() => setSelectedValue(1)}
+        label="option 1"
+      />
+      <RadioButton
+        color="red"
+        checked={selectedValue === 2}
+        onClick={() => setSelectedValue(2)}
+        label="option 2"
+      />
+      <RadioButton
+        color="red"
+        checked={selectedValue === 3}
+        onClick={() => setSelectedValue(3)}
+        label="option 3"
+      />
+    </>
+  );
 };

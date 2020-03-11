@@ -29,10 +29,21 @@
   content: '\ea6e';
 }
 .radio {
+  display: flex;
+  flex: 1 1;
+}
+.btn-radio {
+  font-size: 24px;
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
-.btn-radio {
-  font-size: 24px;
+.radio-label {
+  font-family: Roboto, 'sans-serif';
+  margin-left: 10px;
+  position: unset;
+  line-height: 24px;
+}
+input {
+  display: none;
 }
