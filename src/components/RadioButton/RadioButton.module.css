@@ -28,11 +28,11 @@
 .vns-Radio::before {
   content: '\ea6e';
 }
-.checkbox {
+.radio {
   width: 24px;
   height: 24px;
   cursor: pointer;
 }
-i {
+.btn-radio {
   font-size: 24px;
 }

@@ -16,7 +16,7 @@ const ExpansionPanelSummary: React.FC<ExpansionPanelSummaryProps> = props => {
         setOpen(true);
         _event.currentTarget.nextElementSibling?.setAttribute(
           'style',
-          'visibility:visible; margin: 20px 0; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; ',
+          'visibility:visible; margin: 20px 0; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; height: auto;',
         );
         _event.currentTarget
           .getElementsByTagName('i')[0]
@@ -25,7 +25,7 @@ const ExpansionPanelSummary: React.FC<ExpansionPanelSummaryProps> = props => {
         setOpen(false);
         _event.currentTarget.nextElementSibling?.setAttribute(
           'style',
-          'visibility:hidden; margin: 12px 0; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; height: 0px;',
+          'visibility:hidden; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;  height: 0;',
         );
         _event.currentTarget
           .getElementsByTagName('i')[0]

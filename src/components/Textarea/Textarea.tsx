@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface TextareaProps {
   rows: number | undefined;
@@ -16,7 +16,7 @@ const Textarea: React.FC<TextareaProps> = props => {
       cols={cols}
       placeholder={placeholder}
       onChange={onChange}
-      className={className ? className : ""}
+      className={className ? className : ''}
     >
       {value}
     </textarea>

@@ -30,11 +30,19 @@ const Checkbox: React.FC<CheckboxProps> = props => {
     >
       {!status ? (
         <i
-          className={cx('icon', status ? 'vns-Checkbox' : 'vns-Checkbox-empty')}
+          className={cx(
+            'icon',
+            status ? 'vns-Checkbox' : 'vns-Checkbox-empty',
+            'icon-checkbox',
+          )}
         ></i>
       ) : (
         <i
-          className={cx('icon', status ? 'vns-Checkbox' : 'vns-Checkbox-empty')}
+          className={cx(
+            'icon',
+            status ? 'vns-Checkbox' : 'vns-Checkbox-empty',
+            'icon-checkbox',
+          )}
           style={style}
         ></i>
       )}

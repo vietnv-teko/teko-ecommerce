@@ -15,7 +15,7 @@ const RadioButton: React.FC<RadioButtonProps> = props => {
   return (
     <div
       className={cx(
-        'checkbox',
+        'radio',
         status ? 'checked' : '',
         className ? className : '',
       )}
@@ -25,10 +25,20 @@ const RadioButton: React.FC<RadioButtonProps> = props => {
       }}
     >
       {!status ? (
-        <i className={cx('icon', status ? 'vns-Radio' : 'vns-Radio-empty')}></i>
+        <i
+          className={cx(
+            'icon',
+            status ? 'vns-Radio' : 'vns-Radio-empty',
+            'btn-radio',
+          )}
+        ></i>
       ) : (
         <i
-          className={cx('icon', status ? 'vns-Radio' : 'vns-Radio-empty')}
+          className={cx(
+            'icon',
+            status ? 'vns-Radio' : 'vns-Radio-empty',
+            'btn-radio',
+          )}
           style={{ color: color }}
         ></i>
       )}

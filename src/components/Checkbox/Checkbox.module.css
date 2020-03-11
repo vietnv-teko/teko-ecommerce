@@ -34,6 +34,6 @@
   cursor: pointer;
   color: #e0e0e0;
 }
-i {
-  font-size: 24px !important;
+.icon-checkbox {
+  font-size: 24px;
 }
