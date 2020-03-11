@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './Divider.module.css';
+import styles from './Divider.module.scss';
 
 export type Divider = {
   /**
