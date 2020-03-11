@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import classname from 'classnames/bind';
 import styles from './ExpansionPanel.module.css';
 
 let cx = classname.bind(styles);
+type Props = {
+  /**
+   * The content of the expansion panel.
+   */
+  children?: ReactNode;
+};
 
-const ExpansionPanel: React.FC = props => {
+const ExpansionPanel = (props: Props) => {
   const { children } = props;
   return <div className={cx('panel')}>{children}</div>;
 };

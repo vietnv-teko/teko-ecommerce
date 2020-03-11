@@ -3,11 +3,17 @@ import classname from 'classnames/bind';
 import styles from './Divider.module.css';
 let cx = classname.bind(styles);
 
-interface DividerProps {
+export type DividerProps = {
+  /**
+   * The variant to use. Include 'default', 'middle', 'vertical'
+   * */
   variant?: string;
+  /**
+   * Custom style of component
+   * */
   className?: string;
-}
-const Divider: React.FC<DividerProps> = props => {
+};
+const Divider = (props: DividerProps) => {
   const { variant, className } = props;
   return (
     <hr

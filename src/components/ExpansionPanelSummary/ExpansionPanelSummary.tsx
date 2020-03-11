@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import classname from 'classnames/bind';
-import styles from './ExpansionPanel.module.css';
+import styles from './ExpansionPanelSummary.module.css';
+import { ExpansionPanelDetailProps } from '../ExpansionPanelDetail/ExpansionPanelDetail';
 let cx = classname.bind(styles);
 
-interface ExpansionPanelSummaryProps {
+export type ExpansionPanelSummaryProps = {
+  /**
+   * The content of the expansion panel detail.
+   */
   content: React.ReactNode;
+  /**
+   * custom style of component.
+   */
   className?: string;
-}
-const ExpansionPanelSummary: React.FC<ExpansionPanelSummaryProps> = props => {
+};
+const ExpansionPanelSummary = (props: ExpansionPanelDetailProps) => {
   const { content, className } = props;
   const [open, setOpen] = useState(false);
   const openDetail = (_event: any) => {

@@ -1,24 +1,24 @@
 import React from 'react';
-import Chips from './Chips';
+import Chip from './Chip';
 import classname from 'classnames/bind';
-import styles from './Chips.module.css';
+import styles from './Chip.module.css';
 import { action } from '@storybook/addon-actions';
 
 let cx = classname.bind(styles);
 export default {
-  title: 'Chips',
-  component: Chips,
+  title: 'Chip',
+  component: Chip,
 };
 
 export const Default = () => (
-  <Chips
-    content={'Default Chips'}
+  <Chip
+    content={'Default Chip'}
     variant="default"
     onClick={action('clicked')}
   />
 );
 export const Custom = () => (
-  <Chips
+  <Chip
     content="Custom chip"
     variant="outlined"
     onDelete={action('onDelete')}

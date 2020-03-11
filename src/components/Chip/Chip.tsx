@@ -1,22 +1,37 @@
 import React from 'react';
 import classname from 'classnames/bind';
-import styles from './Chips.module.css';
+import styles from './Chip.module.css';
 let cx = classname.bind(styles);
 
-interface ChipsProps {
+export type ChipProps = {
+  /**
+   * Content of chip.
+   * */
   content: React.ReactNode;
+  /**
+   * Callback fired when click component
+   * */
   onClick?: () => void;
+  /**
+   * Custom style of component
+   * */
   className?: string;
+  /**
+   * The variant to use.
+   * */
   variant: string;
+  /**
+   * Callback fired when click X button
+   * */
   onDelete?: () => void;
-}
-const Chips: React.FC<ChipsProps> = props => {
+};
+const Chip = (props: ChipProps) => {
   const { content, onClick, className, variant, onDelete } = props;
   return (
     <div
       onClick={onClick}
       className={cx(
-        variant === 'outlined' ? 'outlined' : '',
+        { outlined: variant === 'outlined' },
         className ? className : '',
         'chips',
       )}
@@ -32,4 +47,4 @@ const Chips: React.FC<ChipsProps> = props => {
   );
 };
 
-export default Chips;
+export default Chip;

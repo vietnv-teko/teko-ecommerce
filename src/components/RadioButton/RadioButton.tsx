@@ -3,14 +3,29 @@ import classname from 'classnames/bind';
 import styles from './RadioButton.module.css';
 let cx = classname.bind(styles);
 
-interface RadioButtonProps {
+export type RadioButtonProps = {
+  /**
+   * custom style of component
+   * */
   className?: string;
+  /**
+   * If true, the component is checked
+   * */
   checked: boolean;
+  /**
+   *The color of the component
+   */
   color: string;
+  /**
+   * Callback fired when click component
+   */
   onClick: () => void;
+  /**
+   *The text to be used in an enclosing label element
+   */
   label: string;
-}
-const RadioButton: React.FC<RadioButtonProps> = props => {
+};
+const RadioButton = (props: RadioButtonProps) => {
   const { className, checked, color, onClick, label } = props;
   const [status, setStatus] = useState(checked);
   useEffect(() => {

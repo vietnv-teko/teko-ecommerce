@@ -20,32 +20,15 @@
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px !important;
 }
-.vns-Radio-empty::before {
-  content: '\ea6d';
-}
-
-.vns-Radio::before {
-  content: '\ea6e';
-}
-.radio {
+.summary {
+  cursor: pointer;
+  padding: 0 24px;
   display: flex;
   flex: 1 1;
-  width: fit-content;
+  justify-content: space-between;
 }
-.btn-radio {
-  font-size: 24px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-.radio-label {
-  font-family: Roboto, 'sans-serif';
-  margin-left: 10px;
-  position: unset;
-  line-height: 24px;
-  cursor: pointer;
-}
-input {
-  display: none;
+.vns-Down-2::before {
+  content: '\ea2f';
 }

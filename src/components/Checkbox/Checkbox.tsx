@@ -3,14 +3,29 @@ import classname from 'classnames/bind';
 import styles from './Checkbox.module.css';
 let cx = classname.bind(styles);
 
-interface CheckboxProps {
+export type CheckboxProps = {
+  /**
+   * Custom style of component
+   * */
   className?: string;
+  /**
+   * If true, the component is checked
+   * */
   checked?: boolean;
+  /**
+   *Callback fired when click component
+   */
   onClick: () => void;
+  /**
+   *The color of the component
+   */
   color: string;
+  /**
+   *The text to be used in an enclosing label element
+   */
   label: string;
-}
-const Checkbox: React.FC<CheckboxProps> = props => {
+};
+const Checkbox = (props: CheckboxProps) => {
   const { className, checked, onClick, color, label } = props;
   const [status, setStatus] = useState(checked || false);
   const style = {
