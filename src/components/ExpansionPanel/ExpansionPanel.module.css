@@ -1,6 +1,54 @@
-.panel {
-  background-color: #e0e0e0;
+@font-face {
+  font-family: 'Vnshop';
+  src: url('Vnshop.eot');
+  src: url('./Vnshop.eot') format('embedded-opentype'),
+    url('./Vnshop.woff2') format('woff2'), url('./Vnshop.woff') format('woff'),
+    url('./Vnshop.ttf') format('truetype'), url('./Vnshop.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.content {
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Roboto-Regular.ttf') format('truetype');
+}
+
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Vnshop';
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px !important;
+}
+.panel {
+  background-color: #f8f7f7;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.summary {
   cursor: pointer;
+  padding: 0 24px;
+  display: flex;
+  flex: 1 1;
+  justify-content: space-between;
+}
+.deactive {
+  display: none;
+}
+.detail {
+  padding: 0 24px;
+  visibility: hidden;
+}
+.vns-Down-2::before {
+  content: '\ea2f';
+}
+.summary-stories {
+  padding-top: 10px;
+}
+.detail-stories {
+  padding-bottom: 10px;
 }

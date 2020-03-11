@@ -5,10 +5,13 @@ let cx = classname.bind(styles);
 
 interface ExpansionPanelDetailProps {
   content: React.ReactNode;
+  className?: string;
 }
 const ExpansionPanelDetail: React.FC<ExpansionPanelDetailProps> = props => {
-  const { content } = props;
-  return <div className={cx('detail')}>{content}</div>;
+  const { content, className } = props;
+  return (
+    <div className={cx('detail', className ? className : '')}>{content}</div>
+  );
 };
 
 export default ExpansionPanelDetail;
