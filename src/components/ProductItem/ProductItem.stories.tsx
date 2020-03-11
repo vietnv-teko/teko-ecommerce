@@ -17,4 +17,5 @@ const product = {
     'https://lh3.googleusercontent.com/apZl8ZCL6qhElaV_a2oM11GntPHaaOUXmXTtHFYfCgsEzBJnKnoFlv-rhF_VUhqWUgz8Q7rnNjpyoCt9syY',
 };
 
-export const Default = () => <ProductItem product={product} />;
+export const GridItem = () => <ProductItem type="grid" product={product} />;
+export const ListItem = () => <ProductItem type="list" product={product} />;
