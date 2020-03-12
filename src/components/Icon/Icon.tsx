@@ -2,21 +2,24 @@ import React from 'react';
 import styles from './Icon.module.scss';
 import classNames from 'classnames/bind';
 
-let cs = classNames.bind(styles);
-type IProps = {
+let cx = classNames.bind(styles);
+type IconProps = {
   size?: number; //icon font size
   color?: string; //icon color
   className?: string; //icon class
 };
-export default ({ size, color, className, ...rest }: IProps) => {
+const Icon: React.FC<IconProps> = props => {
+  const { size = 14, color = 'black', className, children, ...rest } = props;
   return (
     <i
-      className={cs('tek-icon', className)}
+      className={cx(className, children)}
       style={{
-        color: `${color || 'white'}`,
-        fontSize: `${size ? size + 'px' : '14px'}`,
+        color: color,
+        fontSize: `${size}px`,
       }}
       {...rest}
     ></i>
   );
 };
+
+export default Icon;

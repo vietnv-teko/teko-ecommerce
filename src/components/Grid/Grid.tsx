@@ -16,9 +16,9 @@ const Grid: React.FC<GridProps> = props => {
   const {
     align,
     justify,
-    rowGap,
-    colGap,
-    colNum,
+    rowGap = 10,
+    colGap = 10,
+    colNum = 1,
     children,
     className,
     ...rest
@@ -27,9 +27,9 @@ const Grid: React.FC<GridProps> = props => {
     <div
       className={cx(
         className,
-        `${colNum ? colNum + '-columns' : '1-columns'}`,
-        `${rowGap ? 'row-gap-' + rowGap : 'row-gap-10'}`,
-        `${colGap ? 'col-gap-' + colGap : 'col-gap-10'}`,
+        `${colNum}-columns`,
+        `row-gap-${rowGap}`,
+        `col-gap-${colGap}`,
       )}
       {...rest}
     >

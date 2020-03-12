@@ -7,5 +7,7 @@ export default {
 };
 
 export const Default = () => (
-  <Icon size={35} color="green" className="pvi-icon_UserCircle" />
+  <Icon size={35} color="red">
+    icon vns-Home-Active
+  </Icon>
 );
