@@ -13,7 +13,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = props => {
-  let { children, className, onClick, size, color, variant } = props;
+  let {
+    children,
+    className,
+    onClick,
+    size = 'medium',
+    color = 'primary',
+    variant = 'contained',
+  } = props;
 
   const handleClick = (event: any) => {
     let button = event.target.parentElement;
