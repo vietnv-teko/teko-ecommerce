@@ -7,5 +7,5 @@ export default {
 };
 
 export const Default = () => (
-  <Icon fontSize={35} color="green" className="pvi-icon_UserCircle" />
+  <Icon size={35} color="green" className="pvi-icon_UserCircle" />
 );

@@ -8,16 +8,9 @@ type TTProps = {
   text: string | ReactNode; //tooltips text
   position?: string; //tooltips position, default top
   width?: number; //tooltips width, default 100px
-  fontSize?: number; //tooltips fontsize, default 13px
+  size?: number; //tooltips size, default 13px
 };
-export default ({
-  content,
-  position,
-  text,
-  width,
-  fontSize,
-  ...rest
-}: TTProps) => {
+export default ({ content, position, text, width, size, ...rest }: TTProps) => {
   return (
     <div className={cs('tooltip')}>
       {content}
@@ -27,9 +20,7 @@ export default ({
           'tooltiptext',
           `${position ? 'tooltiptext-' + position : 'tooltiptext-top'}`,
           `${width ? 'tooltiptext-width-' + width : 'tooltiptext-width-100'}`,
-          `${
-            fontSize ? 'tooltiptext-fsize-' + fontSize : 'tooltiptext-fsize-13'
-          }`,
+          `${size ? 'tooltiptext-fsize-' + size : 'tooltiptext-fsize-13'}`,
         )}
       >
         {text}

@@ -11,6 +11,6 @@ export const Default = () => (
     content="xin chào"
     text="bạn đã hover, đây là tooltips"
     position="right"
-    fontSize={12}
+    size={12}
   />
 );
