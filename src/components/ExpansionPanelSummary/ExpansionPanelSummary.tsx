@@ -42,7 +42,7 @@ const ExpansionPanelSummary = (props: ExpansionPanelDetailProps) => {
   };
   return (
     <div
-      className={cx('summary', className ? className : '')}
+      className={cx('summary', className)}
       onClick={event => openDetail(event)}
     >
       {content}

@@ -34,7 +34,7 @@ const Textarea = (props: TextareaProps) => {
       cols={cols}
       placeholder={placeholder}
       onChange={onChange}
-      className={className ? className : ''}
+      className={className}
     >
       {value}
     </textarea>

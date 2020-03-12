@@ -23,7 +23,7 @@ export type RadioButtonProps = {
   /**
    *The text to be used in an enclosing label element
    */
-  label: string;
+  label?: string;
 };
 const RadioButton = (props: RadioButtonProps) => {
   const { className, checked, color, onClick, label } = props;
@@ -33,7 +33,7 @@ const RadioButton = (props: RadioButtonProps) => {
   }, [checked]);
   return (
     <div
-      className={cx('radio', className ? className : '')}
+      className={cx('radio', className)}
       onClick={() => {
         setStatus(true);
         onClick();

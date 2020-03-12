@@ -1,47 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classname from 'classnames/bind';
 import styles from './Breadcrumb.module.css';
 
 let cx = classname.bind(styles);
+
 export type BreadcrumbProps = {
   /**
-   * list of links
-   * */
-  linkList: string[];
-  /**
-   * Callback fired when click component
-   * */
-  onClick?: () => void;
-  /**
-   * custom style of component
+   * Custom style of component
    * */
   className?: string;
+  /**
+   * Content of breadcrumb
+   * */
+  children: React.ReactNode;
+  /**
+   * Custom separator node
+   * */
+  separator: React.ReactNode;
 };
 const Breadcrumb = (props: BreadcrumbProps) => {
-  const { linkList, onClick, className } = props;
-  return (
-    <ul className={cx('breadcrumb', classname ? className : '')}>
-      {linkList.map((item: any, index: any) => (
-        <>
-          {index !== linkList.length - 1 ? (
-            <>
-              <li onClick={onClick} className={cx('clickable-item')}>
-                {index !== 0 && <span className={cx('before-item')}>/</span>}
-                {item}
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                {index !== 0 && <span className={cx('before-item')}>/</span>}
-                {item}
-              </li>
-            </>
-          )}
-        </>
-      ))}
-    </ul>
-  );
+  const { className, children, separator = '/' } = props;
+  useEffect(() => {
+    document
+      .querySelectorAll('a')
+      .forEach(item => item.after(' ' + separator + ' '));
+  }, [separator]);
+
+  return <ul className={cx('breadcrumb', className)}>{children}</ul>;
 };
 
 export default Breadcrumb;

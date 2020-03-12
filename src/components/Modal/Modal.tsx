@@ -28,10 +28,7 @@ export type ModalProps = {
 const Modal = (props: ModalProps) => {
   const { open, onClose, content, className, animation = 'fadeIn' } = props;
   return (
-    <div
-      className={cx('modal', { active: open }, className ? className : '')}
-      onClick={onClose}
-    >
+    <div className={cx('modal', { active: open }, className)} onClick={onClose}>
       <div className={cx('modal-content', animation)}>{content}</div>
     </div>
   );

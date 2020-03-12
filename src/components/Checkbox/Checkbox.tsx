@@ -23,7 +23,7 @@ export type CheckboxProps = {
   /**
    *The text to be used in an enclosing label element
    */
-  label: string;
+  label?: string;
 };
 const Checkbox = (props: CheckboxProps) => {
   const { className, checked, onClick, color, label } = props;
@@ -33,7 +33,7 @@ const Checkbox = (props: CheckboxProps) => {
   };
   return (
     <div
-      className={cx('checkbox', className ? className : '')}
+      className={cx('checkbox', className)}
       onClick={() => {
         setStatus(status ? false : true);
         onClick();

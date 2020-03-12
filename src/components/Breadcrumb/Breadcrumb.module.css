@@ -20,3 +20,6 @@ ul.breadcrumb li:last-child {
 .clickable-item {
   cursor: pointer;
 }
+a {
+  text-decoration: none;
+}

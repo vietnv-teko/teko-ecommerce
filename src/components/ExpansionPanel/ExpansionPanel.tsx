@@ -7,7 +7,7 @@ type Props = {
   /**
    * The content of the expansion panel.
    */
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 const ExpansionPanel = (props: Props) => {

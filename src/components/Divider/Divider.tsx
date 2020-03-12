@@ -18,7 +18,7 @@ const Divider = (props: DividerProps) => {
   return (
     <hr
       className={cx(
-        className ? className : '',
+        className,
         { middle: variant === 'middle' },
         { vertical: variant === 'vertical' },
         'divider',
