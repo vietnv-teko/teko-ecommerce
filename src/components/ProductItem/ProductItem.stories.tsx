@@ -13,8 +13,14 @@ const product = {
     sellPrice: 23490000,
     supplierSalePrice: 24990000,
   },
-  image:
-    'https://lh3.googleusercontent.com/apZl8ZCL6qhElaV_a2oM11GntPHaaOUXmXTtHFYfCgsEzBJnKnoFlv-rhF_VUhqWUgz8Q7rnNjpyoCt9syY',
+  images: [
+    {
+      priority: 1,
+      path: '',
+      url:
+        'https://lh3.googleusercontent.com/apZl8ZCL6qhElaV_a2oM11GntPHaaOUXmXTtHFYfCgsEzBJnKnoFlv-rhF_VUhqWUgz8Q7rnNjpyoCt9syY',
+    },
+  ],
 };
 
 export const GridItem = () => <ProductItem type="grid" product={product} />;

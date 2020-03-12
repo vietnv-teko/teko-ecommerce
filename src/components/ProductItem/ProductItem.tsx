@@ -2,34 +2,26 @@ import React from 'react';
 import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
 import helper from 'helpers';
+import { IProductItem } from 'interfaces';
 
 let cx = classNames.bind(styles);
 
-interface ProductItemProps {
+export type ProductItemProps = {
   /**
    * props test
    * */
-  product: {
-    sku: string;
-    name: string;
-    price: {
-      sellPrice: number;
-      supplierSalePrice: number;
-    };
-    image: string;
-    status?: string;
-  };
+  product: IProductItem;
   className?: string;
   type: string;
   /**
    * Simple click handler
    */
   onClick?: () => void;
-}
+};
 
 const ProductItem: React.FC<ProductItemProps> = props => {
   const { className, onClick, product, type = 'grid' } = props;
-  const { formatCurrency } = helper;
+  const { formatCurrency, getBestPrice, getDiscountPercent } = helper;
   return (
     <div
       onClick={() => onClick}
@@ -42,23 +34,29 @@ const ProductItem: React.FC<ProductItemProps> = props => {
     >
       <div className={cx('product-image')}>
         <div className={cx('image')}>
-          <img src={product.image} alt="" />
+          <img src={product.images && product.images[0].url} alt="" />
         </div>
       </div>
       <div className={cx('product-content')}>
-        <div className={cx('name')}>{product.name}</div>
-        <div className={cx('shipping-info')}>
-          <span>Miễn phí giao hàng toàn quốc</span>
+        <div className={cx('name')}>
+          {product.displayName ? product.displayName : product.name}
         </div>
-        <div className={cx('price')}>
-          <div className={cx('final-price')}>
-            {formatCurrency(product.price.sellPrice)}
+        {false && (
+          <div className={cx('shipping-info')}>
+            <span>Miễn phí giao hàng toàn quốc</span>
           </div>
+        )}
+        <div className={cx('price')}>
+          <div className={cx('final-price')}>{getBestPrice(product)}</div>
           <div>
             <span className={cx('old-price')}>
               {formatCurrency(product.price.supplierSalePrice)}
             </span>
-            <span className={cx('discount-tag')}>-10%</span>
+            {!!getDiscountPercent(product) && (
+              <span className={cx('discount-tag')}>
+                -{getDiscountPercent(product)}%
+              </span>
+            )}
           </div>
         </div>
       </div>
