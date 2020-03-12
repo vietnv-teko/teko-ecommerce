@@ -1,0 +1,22 @@
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: #0275d8;
+  text-decoration: none;
+}
+
+ul.breadcrumb li:last-child {
+  color: black;
+}
+.before-item {
+  padding: 8px;
+  color: black;
+}
+.clickable-item {
+  cursor: pointer;
+}
