@@ -1,19 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Checkbox from './Checkbox';
-import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Checkbox',
-  component: Checkbox,
 };
 
-export const Default = () => {
+export const PrimaryCheckbox = () => {
+  let [checked, setChecked] = useState(false);
   return (
     <Checkbox
-      checked
-      onClick={action('clicked')}
-      color="red"
-      label="checkbox 1"
+      checked={checked}
+      onChange={(ev: any) => setChecked(ev.target.checked)}
+      label="Laptop"
+    />
+  );
+};
+
+export const SecondaryCheckbox = () => {
+  let [checked, setChecked] = useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={(ev: any) => setChecked(ev.target.checked)}
+      color="secondary"
+      label="SSD"
+    />
+  );
+};
+export const LargeCheckbox = () => {
+  let [checked, setChecked] = useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={(ev: any) => setChecked(ev.target.checked)}
+      color="primary"
+      size="large"
+      label="Ram"
+    />
+  );
+};
+export const SmallCheckbox = () => {
+  let [checked, setChecked] = useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={(ev: any) => setChecked(ev.target.checked)}
+      color="primary"
+      size="small"
     />
   );
 };
