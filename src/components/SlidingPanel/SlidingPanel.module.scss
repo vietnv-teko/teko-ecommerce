@@ -1,0 +1,82 @@
+.sliding_panel {
+  .overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .content {
+    border-radius: 10px;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    opacity: 0;
+    overflow: hidden;
+
+    &.open {
+      opacity: 1;
+    }
+  }
+}
+
+.bottom {
+  .content {
+    transition: top 0.4s ease-out, opacity 0.4s ease;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: -10%;
+
+    &.open {
+      top: 50%;
+    }
+  }
+}
+
+.top {
+  .content {
+    transition: bottom 0.4s ease-out, opacity 0.4s ease;
+    top: -10%;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+
+    &.open {
+      bottom: 50%;
+    }
+  }
+}
+
+.left {
+  .content {
+    transition: right 0.4s ease-out, opacity 0.4s ease;
+    top: 0;
+    bottom: 0;
+    left: -10%;
+    right: 100%;
+
+    &.open {
+      right: 50%;
+    }
+  }
+}
+
+.right {
+  .content {
+    transition: left 0.4s ease-out, opacity 0.4s ease;
+    top: 0;
+    bottom: 0;
+    right: -10%;
+    left: 100%;
+
+    &.open {
+      left: 50%;
+    }
+  }
+}
