@@ -30,12 +30,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 export const Default = () => (
-  <Grid
-    content={indents}
-    justify="center"
-    align="middle"
-    colNum={5}
-    rowGap={10}
-    colGap={10}
-  />
+  <Grid justify="center" align="center" colNum={5} rowGap={10} colGap={10}>
+    {indents}
+  </Grid>
 );

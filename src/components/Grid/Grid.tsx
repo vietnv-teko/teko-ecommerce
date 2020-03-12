@@ -1,52 +1,41 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styles from './Grid.module.scss';
 import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
-type GProps = {
+type GridProps = {
   // ROW
   align?: string; //vertical alignment
   justify?: string; //horizontal arrangement
   rowGap?: number; //row gap, default 10
-  // COLUMN
-  content: any[]; //column content
-  colHeight?: number; //column height
   colGap?: number; //column gap, default 10
   colNum?: number; //number of colume, default 1
+  className?: string;
 };
-export default ({
-  align,
-  justify,
-  content,
-  colHeight,
-  rowGap,
-  colGap,
-  colNum,
-  ...rest
-}: GProps) => {
+const Grid: React.FC<GridProps> = props => {
+  const {
+    align,
+    justify,
+    rowGap,
+    colGap,
+    colNum,
+    children,
+    className,
+    ...rest
+  } = props;
   return (
     <div
       className={cx(
-        `${colNum ? 'tek-row-' + colNum : 'tek-row-1'}`,
-        `${align ? 'tek-row-align-' + align : 'tek-row-align-top'}`,
-        `${justify ? 'tek-row-justify-' + justify : 'tek-row-justify-start'}`,
-        `${rowGap ? 'tek-row-gap-' + rowGap : 'tek-row-gap-10'}`,
-        `${colGap ? 'tek-col-gap-' + colGap : 'tek-col-gap-10'}`,
+        className,
+        `${colNum ? colNum + '-columns' : '1-columns'}`,
+        `${rowGap ? 'row-gap-' + rowGap : 'row-gap-10'}`,
+        `${colGap ? 'col-gap-' + colGap : 'col-gap-10'}`,
       )}
       {...rest}
     >
-      {content.map((item: any | ReactNode, index: number) => (
-        <div
-          key={index}
-          className={cx(
-            'tek-col',
-            `tek-col-${content.length}`,
-            `${colHeight ? 'tek-col-hei-' + colHeight : ''}`,
-          )}
-        >
-          {item}
-        </div>
-      ))}
+      {children}
     </div>
   );
 };
+
+export default Grid;

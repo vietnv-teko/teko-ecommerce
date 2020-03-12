@@ -1,58 +1,16 @@
 // row style
 @for $colnum from 1 through 12 {
-  .tek-row-#{$colnum} {
+  .#{$colnum}-columns {
     display: grid;
     grid-template-columns: repeat(#{$colnum}, 1fr);
   }
 }
 
 @for $rowgap from 1 to 100 {
-  .tek-row-gap-#{$rowgap} {
+  .row-gap-#{$rowgap} {
     grid-row-gap: #{$rowgap}px;
   }
-  .tek-col-gap-#{$rowgap} {
+  .col-gap-#{$rowgap} {
     grid-column-gap: #{$rowgap}px;
-  }
-}
-
-.tek-row-align-top {
-  align-items: top;
-}
-
-.tek-row-align-middle {
-  align-items: middle;
-}
-
-.tek-row-align-bottom {
-  align-items: bottom;
-}
-
-.tek-row-justify-start {
-  justify-content: start;
-}
-.tek-row-justify-end {
-  justify-content: end;
-}
-.tek-row-justify-center {
-  justify-content: center;
-}
-.tek-row-justify-space-around {
-  justify-content: space-around;
-}
-.tek-row-justify-space-between {
-  justify-content: space-between;
-}
-// column style
-.tek-col {
-  position: relative;
-  flex: 0 1 auto;
-  max-width: 100%;
-  min-height: 1px;
-  height: auto;
-}
-
-@for $colhei from 1 through 300 {
-  .tek-col-hei-#{$colhei} {
-    height: #{$colhei}px;
   }
 }
