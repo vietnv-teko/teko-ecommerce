@@ -1,0 +1,57 @@
+/* Tooltip text */
+.tooltip {
+  position: absolute;
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.6;
+}
+
+@for $twidth from 100 through 300 {
+  .tooltiptext-top.tooltiptext-width-#{$twidth} {
+    width: #{$twidth}px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -#{$twidth/2}px;
+  }
+  .tooltiptext-bottom.tooltiptext-width-#{$twidth} {
+    width: #{$twidth}px;
+    top: 100%;
+    left: 50%;
+    margin-left: -#{$twidth/2}px;
+  }
+  .tooltiptext-left.tooltiptext-width-#{$twidth} {
+    width: #{$twidth}px;
+    top: -5px;
+    right: 105%;
+  }
+  .tooltiptext-right.tooltiptext-width-#{$twidth} {
+    width: #{$twidth}px;
+    top: -5px;
+    left: 105%;
+  }
+}
+
+@for $tfsize from 1 through 30 {
+  .tooltiptext-fsize-#{$tfsize} {
+    font-size: #{$tfsize}px;
+  }
+}

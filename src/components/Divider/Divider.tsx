@@ -1,6 +1,6 @@
 import React from 'react';
 import classname from 'classnames/bind';
-import styles from './Divider.module.css';
+import styles from './Divider.module.scss';
 let cx = classname.bind(styles);
 
 export type DividerProps = {
