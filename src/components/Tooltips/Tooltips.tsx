@@ -7,15 +7,15 @@ type TTProps = {
   content: string | ReactNode; //hovered content to show tooltips
   text: string | ReactNode; //tooltips text
   position?: string; //tooltips position, default top
-  tWidth?: number; //tooltips width, default 100px
-  tFsize?: number; //tooltips fontsize, default 13px
+  width?: number; //tooltips width, default 100px
+  fontSize?: number; //tooltips fontsize, default 13px
 };
 export default ({
   content,
   position,
   text,
-  tWidth,
-  tFsize,
+  width,
+  fontSize,
   ...rest
 }: TTProps) => {
   return (
@@ -26,8 +26,10 @@ export default ({
         className={cs(
           'tooltiptext',
           `${position ? 'tooltiptext-' + position : 'tooltiptext-top'}`,
-          `${tWidth ? 'tooltiptext-width-' + tWidth : 'tooltiptext-width-100'}`,
-          `${tFsize ? 'tooltiptext-fsize-' + tFsize : 'tooltiptext-fsize-13'}`,
+          `${width ? 'tooltiptext-width-' + width : 'tooltiptext-width-100'}`,
+          `${
+            fontSize ? 'tooltiptext-fsize-' + fontSize : 'tooltiptext-fsize-13'
+          }`,
         )}
       >
         {text}

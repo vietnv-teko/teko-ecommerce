@@ -6,11 +6,11 @@ export default {
   component: Grid,
 };
 
-export const Vertical = () => (
+export const Default = () => (
   <Grid
-    content={['hahaha', 'hihihi', 'huhuhu', 'hihihi', 'huhuhu']}
-    justify={'center'}
-    align={'middle'}
+    content={['xin chào', 'tất cả', 'mọi người', ':D', '<3']}
+    justify="center"
+    align="middle"
     colNum={4}
     rowGap={20}
     colGap={20}

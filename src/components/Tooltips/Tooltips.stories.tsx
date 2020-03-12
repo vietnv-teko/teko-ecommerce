@@ -6,11 +6,11 @@ export default {
   component: Tooltips,
 };
 
-export const Vertical = () => (
+export const Default = () => (
   <Tooltips
-    content={'hahaha'}
-    text={'bạn đã hover, đây là tooltips'}
-    position={'right'}
-    tFsize={12}
+    content="xin chào"
+    text="bạn đã hover, đây là tooltips"
+    position="right"
+    fontSize={12}
   />
 );

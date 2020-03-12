@@ -6,4 +6,4 @@ export default {
   component: Pagination,
 };
 
-export const Vertical = () => <Pagination />;
+export const Default = () => <Pagination />;

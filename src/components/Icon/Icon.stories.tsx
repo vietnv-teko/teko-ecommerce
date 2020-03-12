@@ -6,6 +6,6 @@ export default {
   component: Icon,
 };
 
-export const Vertical = () => (
-  <Icon icfsize={35} iccolor={'green'} icclass={'pvi-icon_UserCircle'} />
+export const Default = () => (
+  <Icon fontSize={35} color="green" className="pvi-icon_UserCircle" />
 );

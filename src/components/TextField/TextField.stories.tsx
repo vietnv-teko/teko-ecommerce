@@ -6,4 +6,4 @@ export default {
   component: TextField,
 };
 
-export const Vertical = () => <TextField />;
+export const Default = () => <TextField />;

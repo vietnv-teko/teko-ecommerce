@@ -4,17 +4,17 @@ import classNames from 'classnames/bind';
 
 let cs = classNames.bind(styles);
 type IProps = {
-  icfsize?: number; //icon font size
-  iccolor?: string; //icon color
-  icclass?: string; //icon class
+  fontSize?: number; //icon font size
+  color?: string; //icon color
+  className?: string; //icon class
 };
-export default ({ icfsize, iccolor, icclass, ...rest }: IProps) => {
+export default ({ fontSize, color, className, ...rest }: IProps) => {
   return (
     <i
-      className={cs('tek-icon', `${icclass ? icclass : ''}`)}
+      className={cs('tek-icon', className)}
       style={{
-        color: `${iccolor || 'white'}`,
-        fontSize: `${icfsize ? icfsize + 'px' : '14px'}`,
+        color: `${color || 'white'}`,
+        fontSize: `${fontSize ? fontSize + 'px' : '14px'}`,
       }}
       {...rest}
     ></i>
