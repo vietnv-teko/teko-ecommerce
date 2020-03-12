@@ -14,6 +14,6 @@ export const Default = () => (
     colNum={4}
     rowGap={20}
     colGap={20}
-    colHei={80}
+    colHeight={80}
   />
 );
