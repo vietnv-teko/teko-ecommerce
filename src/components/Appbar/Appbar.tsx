@@ -29,7 +29,7 @@ const Appbar: React.FC<IAppbar> = ({
     >
       {startIcon && <div className={cx('start')}>{startIcon}</div>}
       {middle && <div className={cx({ middle: true })}>{middle}</div>}
-      {endIcon && <div className={cx('end')}>{endIcon} </div>}
+      {endIcon && <div className={cx('end')}>{endIcon}</div>}
     </div>
   );
 };
