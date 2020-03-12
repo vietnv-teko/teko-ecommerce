@@ -1,0 +1,703 @@
+/*--------------------------------
+
+Vnshop Web Font
+Generated using nucleoapp.com
+
+-------------------------------- */
+@font-face {
+  font-family: 'Vnshop';
+  src: url('fonts/Vnshop.eot');
+  src: url('fonts/Vnshop.eot') format('embedded-opentype'),
+  url('fonts/Vnshop.woff2') format('woff2'),
+  url('fonts/Vnshop.woff') format('woff'),
+  url('fonts/Vnshop.ttf') format('truetype'),
+  url('fonts/Vnshop.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*------------------------
+	base class definition
+-------------------------*/
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Vnshop';
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*------------------------
+  change icon size
+-------------------------*/
+/* relative units */
+.icon-sm {
+  font-size: 0.8em;
+}
+.icon-lg {
+  font-size: 1.2em;
+}
+/* absolute units */
+.icon-16 {
+  font-size: 16px;
+}
+.icon-32 {
+  font-size: 32px;
+}
+/*----------------------------------
+  add a square/circle background
+-----------------------------------*/
+.icon-bg-square,
+.icon-bg-circle {
+  padding: 0.35em;
+  background-color: #eee;
+}
+.icon-bg-circle {
+  border-radius: 50%;
+}
+/*------------------------------------
+  use icons as list item markers
+-------------------------------------*/
+.icon-ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.icon-ul > li {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+.icon-ul > li > .icon {
+  margin-right: 0.4em;
+  line-height: inherit;
+}
+/*------------------------
+  spinning icons
+-------------------------*/
+.icon-is-spinning {
+  -webkit-animation: icon-spin 2s infinite linear;
+  -moz-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes icon-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+.icon-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.icon-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.icon-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.icon-flip-y {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.icon-flip-x {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+/*------------------------
+	icons
+-------------------------*/
+
+.vns-001-Mom-n-Kid::before {
+  content: '\ea01';
+}
+
+.vns-002-Toys::before {
+  content: '\ea02';
+}
+
+.vns-003-Cosmetic::before {
+  content: '\ea03';
+}
+
+.vns-004-Health-care::before {
+  content: '\ea04';
+}
+
+.vns-005-006-Furniture::before {
+  content: '\ea05';
+}
+
+.vns-007-Fashion::before {
+  content: '\ea06';
+}
+
+.vns-008-Electric-appliances::before {
+  content: '\ea07';
+}
+
+.vns-009-Food::before {
+  content: '\ea08';
+}
+
+.vns-010-Voucher::before {
+  content: '\ea09';
+}
+
+.vns-011-012-013-Book::before {
+  content: '\ea0a';
+}
+
+.vns-014-Laptop::before {
+  content: '\ea0b';
+}
+
+.vns-015-Phone::before {
+  content: '\ea0c';
+}
+
+.vns-016-Headphone::before {
+  content: '\ea0d';
+}
+
+.vns-017-Camera::before {
+  content: '\ea0e';
+}
+
+.vns-019-Sport::before {
+  content: '\ea0f';
+}
+
+.vns-Account-Active::before {
+  content: '\ea10';
+}
+
+.vns-Account-Inactive::before {
+  content: '\ea11';
+}
+
+.vns-Add-multi-stuff-Minus::before {
+  content: '\ea12';
+}
+
+.vns-Add-multi-stuff-Plus::before {
+  content: '\ea13';
+}
+
+.vns-Arrow::before {
+  content: '\ea14';
+}
+
+.vns-Back-2::before {
+  content: '\ea15';
+}
+
+.vns-Back::before {
+  content: '\ea16';
+}
+
+.vns-Bookmark::before {
+  content: '\ea17';
+}
+
+.vns-Build-PC-Case-PC::before {
+  content: '\ea18';
+}
+
+.vns-CPU::before {
+  content: '\ea19';
+}
+
+.vns-Calculator::before {
+  content: '\ea1a';
+}
+
+.vns-Call-center::before {
+  content: '\ea1b';
+}
+
+.vns-Camera-Filled::before {
+  content: '\ea1c';
+}
+
+.vns-Camera::before {
+  content: '\ea1d';
+}
+
+.vns-Cart::before {
+  content: '\ea1e';
+}
+
+.vns-Cash::before {
+  content: '\ea1f';
+}
+
+.vns-Category-Active::before {
+  content: '\ea20';
+}
+
+.vns-Category-Inactive::before {
+  content: '\ea21';
+}
+
+.vns-Caution-fill-2::before {
+  content: '\ea22';
+}
+
+.vns-Caution-fill::before {
+  content: '\ea23';
+}
+
+.vns-Caution::before {
+  content: '\ea24';
+}
+
+.vns-Chat::before {
+  content: '\ea25';
+}
+
+.vns-Check::before {
+  content: '\ea27';
+}
+
+.vns-Checkbox-empty::before {
+  content: '\ea26';
+}
+
+.vns-Checkbox::before {
+  content: '\ea28';
+}
+
+.vns-Clock::before {
+  content: '\ea29';
+}
+
+.vns-Close-X-2::before {
+  content: '\ea2a';
+}
+
+.vns-Close-X::before {
+  content: '\ea2b';
+}
+
+.vns-Comission::before {
+  content: '\ea2c';
+}
+
+.vns-Delete-GREY::before {
+  content: '\ea2d';
+}
+
+.vns-Delete-RED::before {
+  content: '\ea2e';
+}
+
+.vns-Down-2::before {
+  content: '\ea2f';
+}
+
+.vns-Down::before {
+  content: '\ea30';
+}
+
+.vns-Download::before {
+  content: '\ea31';
+}
+
+.vns-Edit::before {
+  content: '\ea32';
+}
+
+.vns-Email-Subscribe::before {
+  content: '\ea33';
+}
+
+.vns-Favorite::before {
+  content: '\ea34';
+}
+
+.vns-Filter-Sort-by::before {
+  content: '\ea35';
+}
+
+.vns-Filter::before {
+  content: '\ea36';
+}
+
+.vns-Flash-sale::before {
+  content: '\ea37';
+}
+
+.vns-Forward-2::before {
+  content: '\ea38';
+}
+
+.vns-Forward::before {
+  content: '\ea39';
+}
+
+.vns-Freeshipping::before {
+  content: '\ea3a';
+}
+
+.vns-Garbage-Filled::before {
+  content: '\ea3b';
+}
+
+.vns-Garbage::before {
+  content: '\ea3c';
+}
+
+.vns-Gift-2::before {
+  content: '\ea3d';
+}
+
+.vns-Gift-Plus::before {
+  content: '\ea3e';
+}
+
+.vns-Gift::before {
+  content: '\ea3f';
+}
+
+.vns-Graphic-card::before {
+  content: '\ea40';
+}
+
+.vns-Grid::before {
+  content: '\ea41';
+}
+
+.vns-Guarantee-Checked::before {
+  content: '\ea42';
+}
+
+.vns-HDD::before {
+  content: '\ea43';
+}
+
+.vns-Hamburger::before {
+  content: '\ea44';
+}
+
+.vns-Headphone::before {
+  content: '\ea45';
+}
+
+.vns-Hide::before {
+  content: '\ea46';
+}
+
+.vns-Home-Active::before {
+  content: '\ea47';
+}
+
+.vns-Home-Inactive::before {
+  content: '\ea48';
+}
+
+.vns-Hot-product::before {
+  content: '\ea49';
+}
+
+.vns-Image_Placeholder::before {
+  content: '\ea4a';
+}
+
+.vns-Infor-fill::before {
+  content: '\ea4b';
+}
+
+.vns-Infor::before {
+  content: '\ea4c';
+}
+
+.vns-Installment::before {
+  content: '\ea4d';
+}
+
+.vns-Keyboard::before {
+  content: '\ea4e';
+}
+
+.vns-Laptop::before {
+  content: '\ea50';
+}
+
+.vns-Listing::before {
+  content: '\ea4f';
+}
+
+.vns-Location-2::before {
+  content: '\ea51';
+}
+
+.vns-Location::before {
+  content: '\ea52';
+}
+
+.vns-Logout::before {
+  content: '\ea53';
+}
+
+.vns-Mainboard::before {
+  content: '\ea54';
+}
+
+.vns-Mark-as-read::before {
+  content: '\ea55';
+}
+
+.vns-Minus_default::before {
+  content: '\ea56';
+}
+
+.vns-Monitor::before {
+  content: '\ea57';
+}
+
+.vns-More-Info-2::before {
+  content: '\ea58';
+}
+
+.vns-More-Info::before {
+  content: '\ea59';
+}
+
+.vns-Mouse::before {
+  content: '\ea5a';
+}
+
+.vns-Network-stuff::before {
+  content: '\ea5b';
+}
+
+.vns-New-arrival::before {
+  content: '\ea5c';
+}
+
+.vns-Notification-fill::before {
+  content: '\ea5d';
+}
+
+.vns-Notification::before {
+  content: '\ea5e';
+}
+
+.vns-Online-payment::before {
+  content: '\ea5f';
+}
+
+.vns-Order-Active::before {
+  content: '\ea60';
+}
+
+.vns-Order-Inactive::before {
+  content: '\ea61';
+}
+
+.vns-Order-checklist::before {
+  content: '\ea62';
+}
+
+.vns-PSU::before {
+  content: '\ea63';
+}
+
+.vns-Phone::before {
+  content: '\ea64';
+}
+
+.vns-Plus_default::before {
+  content: '\ea65';
+}
+
+.vns-Product::before {
+  content: '\ea66';
+}
+
+.vns-Promo-code::before {
+  content: '\ea67';
+}
+
+.vns-Promo-color::before {
+  content: '\ea68';
+}
+
+.vns-Promotion::before {
+  content: '\ea69';
+}
+
+.vns-Q-n-A::before {
+  content: '\ea6a';
+}
+
+.vns-QR-Code::before {
+  content: '\ea6b';
+}
+
+.vns-RAM::before {
+  content: '\ea6c';
+}
+
+.vns-Radio-empty::before {
+  content: '\ea6d';
+}
+
+.vns-Radio::before {
+  content: '\ea6e';
+}
+
+.vns-Rating-2::before {
+  content: '\ea6f';
+}
+
+.vns-Rating-Grey-2::before {
+  content: '\ea70';
+}
+
+.vns-Rating-Grey::before {
+  content: '\ea71';
+}
+
+.vns-Rating::before {
+  content: '\ea72';
+}
+
+.vns-Refresh::before {
+  content: '\ea73';
+}
+
+.vns-Return-product::before {
+  content: '\ea74';
+}
+
+.vns-SEARCH::before {
+  content: '\ea75';
+}
+
+.vns-Sale-on-time::before {
+  content: '\ea76';
+}
+
+.vns-Scan::before {
+  content: '\ea77';
+}
+
+.vns-Setting::before {
+  content: '\ea78';
+}
+
+.vns-Share::before {
+  content: '\ea79';
+}
+
+.vns-Shopping-cart-Active::before {
+  content: '\ea7a';
+}
+
+.vns-Shopping-cart-Inactive::before {
+  content: '\ea7b';
+}
+
+.vns-Shopping-cart::before {
+  content: '\ea7c';
+}
+
+.vns-Show::before {
+  content: '\ea7d';
+}
+
+.vns-Showroom-Shop::before {
+  content: '\ea7e';
+}
+
+.vns-Success::before {
+  content: '\ea7f';
+}
+
+.vns-Television::before {
+  content: '\ea80';
+}
+
+.vns-Undo::before {
+  content: '\ea81';
+}
+
+.vns-Up-2::before {
+  content: '\ea82';
+}
+
+.vns-Up::before {
+  content: '\ea83';
+}
+
+.vns-Waiting::before {
+  content: '\ea84';
+}
+
+.vns-dot::before {
+  content: '\ea85';
+}
+
+.vns-facebook::before {
+  content: '\ea86';
+}
+
+.vns-google::before {
+  content: '\ea87';
+}
+
+.vns-question::before {
+  content: '\ea88';
+}
