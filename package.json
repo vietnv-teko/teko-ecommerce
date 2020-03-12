@@ -25,10 +25,7 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.10",
-<<<<<<< HEAD
     "classnames": "^2.2.6",
-=======
->>>>>>> 61ad32c2637b0b6c31434ab4906c011b9e5083dc
     "node-sass": "^4.13.1"
   },
   "peerDependencies": {

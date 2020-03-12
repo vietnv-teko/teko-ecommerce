@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from './Divider';
 import classname from 'classnames/bind';
-import styles from './Divider.module.scss';
+import styles from './Divider.module.css';
 let cx = classname.bind(styles);
 
 export default {
