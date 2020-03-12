@@ -10,7 +10,6 @@ interface ButtonProps {
   size?: string;
   color?: string;
   variant?: string;
-  disable?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = props => {
