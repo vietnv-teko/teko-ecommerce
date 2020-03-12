@@ -3,7 +3,7 @@ import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
 import helper from 'helpers';
 import { IProductItem } from 'interfaces';
-
+import LazyImage from 'components/LazyImage';
 let cx = classNames.bind(styles);
 
 export type ProductItemProps = {
@@ -34,9 +34,10 @@ const ProductItem: React.FC<ProductItemProps> = props => {
       {...rest}
     >
       <div className={cx('product-image')}>
-        <div className={cx('image')}>
-          <img src={product.images && product.images[0].url} alt="" />
-        </div>
+        <LazyImage
+          src={(product.images && product.images[0].url) || ''}
+          cover
+        />
       </div>
       <div className={cx('product-content')}>
         <div className={cx('name')}>
