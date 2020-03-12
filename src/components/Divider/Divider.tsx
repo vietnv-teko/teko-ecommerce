@@ -1,19 +1,30 @@
-import * as React from 'react';
-import styles from './Divider.module.scss';
+import React from 'react';
+import classname from 'classnames/bind';
+import styles from './Divider.module.css';
+let cx = classname.bind(styles);
 
-export type Divider = {
+export type DividerProps = {
   /**
-   * props test
+   * The variant to use. Include 'default', 'middle', 'vertical'
    * */
-  props1?: string;
+  variant?: string;
   /**
-   * Simple click handler
-   */
-  onClick?: () => void;
+   * Custom style of component
+   * */
+  className?: string;
 };
-
-const Divider = ({ props1 = '1' }: Divider) => {
-  return <div className={styles.divider}>divider {props1}</div>;
+const Divider = (props: DividerProps) => {
+  const { variant, className } = props;
+  return (
+    <hr
+      className={cx(
+        className ? className : '',
+        { middle: variant === 'middle' },
+        { vertical: variant === 'vertical' },
+        'divider',
+      )}
+    />
+  );
 };
 
 export default Divider;
