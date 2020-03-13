@@ -22,8 +22,8 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
 
   useEffect(() => {
     let content = contentRef.current;
-    if (open) {
-      if (content) {
+    if (content) {
+      if (open) {
         let height: number = 0;
         for (let node of Array.from(content.childNodes)) {
           //@ts-ignore
@@ -39,13 +39,12 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
             content.style.overflowY = 'auto';
           }
         }, 400);
-      }
-    } else {
-      if (content) {
+      } else {
         content.style.top = `${'105%'}`;
         content.style.overflowY = 'hidden';
       }
     }
+    // eslint-disable-next-line
   }, [open]);
 
   const handleClick = (event: any) => {
