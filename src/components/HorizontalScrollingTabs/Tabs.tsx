@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import classname from 'classnames/bind';
-import styles from './HorizontalScrollingTabs.module.css';
+import styles from './Tabs.module.css';
 
 let cx = classname.bind(styles);
 
@@ -35,7 +35,7 @@ const HorizontalScollingTabs = (props: HorizontalScollingTabsProps) => {
   };
   useEffect(() => {
     // Auto scroll tab
-    const tab = document.getElementById('js-just-for-you-tabs');
+    const tab = document.getElementById('tabs');
     const el = document.getElementById(`tab-${activeTab}`);
     if (tab && el && tab.scroll) {
       tab.scroll({
@@ -45,10 +45,7 @@ const HorizontalScollingTabs = (props: HorizontalScollingTabsProps) => {
     }
   }, [activeTab, smoothTab]);
   return (
-    <div
-      id="horizontal-scrolling-tabs"
-      className={cx('horizontal-scrolling-tabs', className)}
-    >
+    <div id="tabs" className={cx('tabs', className)}>
       {list.map((tab, index) => {
         return (
           <div

@@ -1,11 +1,11 @@
-.horizontal-scrolling-tabs {
+.tabs {
   padding: 10px 16px;
   background: #fff;
   overflow-x: scroll;
   white-space: nowrap;
   width: 100%;
 }
-.horizontal-scrolling-tabs::-webkit-scrollbar {
+.tabs::-webkit-scrollbar {
   display: none;
 }
 .item {
@@ -19,7 +19,7 @@
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
-.item .active {
+.item.active {
   background-color: #f6f6f6;
   color: #333333;
   border-radius: 999px;

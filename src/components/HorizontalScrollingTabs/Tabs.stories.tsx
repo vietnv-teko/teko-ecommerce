@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import HorizontalScrollingTabs from './HorizontalScrollingTabs';
+import Tabs from './Tabs';
 
 export default {
-  title: 'HorizontalScrollingTabs',
-  component: HorizontalScrollingTabs,
+  title: 'Tabs',
+  component: Tabs,
 };
 
 export const Default = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
   const categoryList = [
     { id: 1, name: 'Tất cả' },
     { id: 2, name: 'Mẹ & bé' },
@@ -17,7 +17,7 @@ export const Default = () => {
     { id: 6, name: 'Đồ điện - gia dụng' },
   ];
   return (
-    <HorizontalScrollingTabs
+    <Tabs
       activeTab={activeTab}
       setActiveTab={setActiveTab}
       list={categoryList}

@@ -1,1 +1,1 @@
-export { default } from './HorizontalScrollingTabs';
+export { default } from './Tabs';
