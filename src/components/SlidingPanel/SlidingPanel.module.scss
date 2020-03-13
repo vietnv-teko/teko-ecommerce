@@ -7,7 +7,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 10;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.3);
   }
 
@@ -15,7 +15,7 @@
     border-radius: 10px;
     position: fixed;
     background-color: white;
-    z-index: 100;
+    z-index: 101;
     opacity: 0;
     overflow: hidden;
 
@@ -30,53 +30,7 @@
     transition: top 0.4s ease-out, opacity 0.4s ease;
     left: 0;
     right: 0;
-    top: 100%;
-    bottom: -10%;
-
-    &.open {
-      top: 50%;
-    }
-  }
-}
-
-.top {
-  .content {
-    transition: bottom 0.4s ease-out, opacity 0.4s ease;
-    top: -10%;
-    left: 0;
-    right: 0;
-    bottom: 100%;
-
-    &.open {
-      bottom: 50%;
-    }
-  }
-}
-
-.left {
-  .content {
-    transition: right 0.4s ease-out, opacity 0.4s ease;
-    top: 0;
-    bottom: 0;
-    left: -10%;
-    right: 100%;
-
-    &.open {
-      right: 50%;
-    }
-  }
-}
-
-.right {
-  .content {
-    transition: left 0.4s ease-out, opacity 0.4s ease;
-    top: 0;
-    bottom: 0;
-    right: -10%;
-    left: 100%;
-
-    &.open {
-      left: 50%;
-    }
+    top: 105%;
+    bottom: -5%;
   }
 }

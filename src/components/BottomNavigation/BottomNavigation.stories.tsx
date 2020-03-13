@@ -1,17 +1,10 @@
 import React from 'react';
 import BottomNavigation from './BottomNavigation';
 import { BrowserRouter } from 'react-router-dom';
-import Container from '../Container';
 
 export default {
   title: 'BottomNavigation',
-  decorators: [
-    (storyFn: any) => (
-      <Container>
-        <BrowserRouter>{storyFn()}</BrowserRouter>
-      </Container>
-    ),
-  ],
+  decorators: [(storyFn: any) => <BrowserRouter>{storyFn()}</BrowserRouter>],
 };
 
 let navItems = [
