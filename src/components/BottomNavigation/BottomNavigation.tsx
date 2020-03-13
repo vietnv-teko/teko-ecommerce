@@ -10,6 +10,7 @@ interface IBottomNavigation {
   hideLabels?: boolean;
   active: string | number;
   onChange: any;
+  className?: string;
 }
 
 const BottomNavigation: React.FC<IBottomNavigation> = ({
@@ -18,12 +19,14 @@ const BottomNavigation: React.FC<IBottomNavigation> = ({
   navItems,
   active,
   onChange,
+  className = '',
 }) => {
   return (
     <div
       className={cx({
         bottom_nav: true,
         hide_label: hideLabels,
+        [className]: true,
       })}
     >
       {navItems.map(
