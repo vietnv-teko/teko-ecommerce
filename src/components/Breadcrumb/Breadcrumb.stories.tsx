@@ -1,17 +1,19 @@
 import React from 'react';
 import Breadcrumb from './Breadcrumb';
-import { action } from '@storybook/addon-actions';
-
+import Link from '../Link';
 export default {
   title: 'Breadcrumb',
   component: Breadcrumb,
 };
 
 export const Default = () => {
-  const linkList = ['Home', 'Picture', 'Summmer 15', 'Italy'];
   return (
     <>
-      <Breadcrumb linkList={linkList} onClick={action('clicked')} />
+      <Breadcrumb separator="/">
+        <Link href="#" text="Vnshop" color="#22a0ff" underline="hover" />
+        <Link href="#" color="#22a0ff" text="Đồ gia dụng" underline="hover" />
+        <span>Nồi cơm điện Sunhouse</span>
+      </Breadcrumb>
     </>
   );
 };

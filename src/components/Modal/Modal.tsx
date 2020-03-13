@@ -11,7 +11,7 @@ export type ModalProps = {
   /**
    * Content of  modal.
    * */
-  content: React.ReactNode;
+  children: React.ReactNode;
   /**
    * Callback fired when the component requests to be closed.
    * */
@@ -25,14 +25,32 @@ export type ModalProps = {
    * */
   animation?: string;
 };
+
 const Modal = (props: ModalProps) => {
-  const { open, onClose, content, className, animation = 'fadeIn' } = props;
+  const { open, onClose, children, className, animation = 'fadeIn' } = props;
+  const handleOnClick = (event: any) => {
+    const modalContent = document.getElementById('modal-content');
+    let targetElement = event.target;
+    do {
+      if (targetElement === modalContent) {
+        return;
+      }
+
+      targetElement = targetElement.parentNode;
+    } while (targetElement);
+    onClose();
+  };
   return (
     <div
-      className={cx('modal', { active: open }, className ? className : '')}
-      onClick={onClose}
+      className={cx('modal', { active: open })}
+      onClick={event => handleOnClick(event)}
     >
-      <div className={cx('modal-content', animation)}>{content}</div>
+      <div
+        id="modal-content"
+        className={cx('modal-content', animation, className)}
+      >
+        {children}
+      </div>
     </div>
   );
 };

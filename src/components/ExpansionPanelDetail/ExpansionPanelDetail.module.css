@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('./Roboto-Regular.ttf') format('truetype');
-}
-
 .detail {
   padding: 0 24px;
   visibility: hidden;

@@ -30,11 +30,7 @@ const Chip = (props: ChipProps) => {
   return (
     <div
       onClick={onClick}
-      className={cx(
-        { outlined: variant === 'outlined' },
-        className ? className : '',
-        'chips',
-      )}
+      className={cx({ outlined: variant === 'outlined' }, className, 'chip')}
     >
       <span className={cx('label')}>{content}</span>
       {onDelete && (

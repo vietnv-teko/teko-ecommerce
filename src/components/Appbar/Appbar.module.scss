@@ -5,26 +5,32 @@
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   color: #222222;
+  z-index: 50;
 
   .middle {
     font-size: 16px;
     font-weight: bold;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    flex: 1;
   }
 
   .start {
     display: flex;
-    padding: 16px
+    justify-content: center;
+    min-width: 56px;
   }
 
   .end {
     display: flex;
-    padding: 16px;
-    position: absolute;
-    right: 0;
+    justify-content: center;
+    min-width: 56px;
   }
 }
 
