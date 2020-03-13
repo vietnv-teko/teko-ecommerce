@@ -1,0 +1,45 @@
+.appbar {
+  background-color: white;
+  width: 100%;
+  min-height: 56px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  color: #222222;
+
+  .middle {
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .start {
+    display: flex;
+    padding: 16px
+  }
+
+  .end {
+    display: flex;
+    padding: 16px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.sticky {
+  position: sticky;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
