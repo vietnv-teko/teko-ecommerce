@@ -1,6 +1,6 @@
 import React from 'react';
 import classname from 'classnames/bind';
-import styles from './DialogAction.module.css';
+import styles from './DialogAction.module.scss';
 
 let cx = classname.bind(styles);
 export type DialogActionProps = {
@@ -15,13 +15,13 @@ export type DialogActionProps = {
   /**
    * If true, button on the right
    * */
-  right?: boolean;
+  justify?: string;
 };
 const DialogAction = (props: DialogActionProps) => {
-  const { children, className, right } = props;
+  const { children, className, justify = 'center' } = props;
 
   return (
-    <div className={cx(className, right ? 'right' : 'center')}>{children}</div>
+    <div className={cx('dialog-action', className, justify)}>{children}</div>
   );
 };
 

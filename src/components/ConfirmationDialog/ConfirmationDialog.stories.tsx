@@ -18,7 +18,7 @@ export const Default = () => {
       <ConfirmationDialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle>Title</DialogTitle>
         <DialogContent>Content</DialogContent>
-        <DialogAction>
+        <DialogAction justify="right">
           <Button color="secondary" variant="outlined" size="medium">
             Cancel
           </Button>
