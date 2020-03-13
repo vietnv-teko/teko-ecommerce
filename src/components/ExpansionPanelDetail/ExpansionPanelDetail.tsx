@@ -15,9 +15,7 @@ export type ExpansionPanelDetailProps = {
 };
 const ExpansionPanelDetail = (props: ExpansionPanelDetailProps) => {
   const { content, className } = props;
-  return (
-    <div className={cx('detail', className ? className : '')}>{content}</div>
-  );
+  return <div className={cx('detail', className)}>{content}</div>;
 };
 
 export default ExpansionPanelDetail;

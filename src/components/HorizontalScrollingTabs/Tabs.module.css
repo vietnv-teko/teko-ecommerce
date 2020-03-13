@@ -1,0 +1,28 @@
+.tabs {
+  padding: 10px 16px;
+  background: #fff;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+.item {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  color: #848788;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.item.active {
+  background-color: #f6f6f6;
+  color: #333333;
+  border-radius: 999px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}

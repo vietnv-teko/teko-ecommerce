@@ -21,17 +21,17 @@ export type ToastProps = {
    * Content of toast
    */
   content: React.ReactNode;
+  /**
+   * position of toast: top of bottom
+   */
+  position?: string;
 };
 const Toast = (props: ToastProps) => {
-  const { open, className, content, onClick } = props;
+  const { open, className, content, onClick, position = 'top' } = props;
 
   return (
     <div
-      className={cx(
-        'toast',
-        className ? className : '',
-        open ? 'active' : 'inactive',
-      )}
+      className={cx('toast', className, { active: open }, position)}
       onClick={onClick}
     >
       {content}

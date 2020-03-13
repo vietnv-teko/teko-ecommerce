@@ -1,0 +1,10 @@
+.underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.linkHover:hover {
+  text-decoration: underline;
+}
+.noneUnderline {
+  text-decoration: none;
+}
