@@ -6,13 +6,19 @@ export default {
 };
 
 export const SecondaryBadge = () => (
-  <Badge value={9} color={'secondary'}>
+  <Badge value={9} color="secondary">
     Inbox
   </Badge>
 );
 
 export const PrimaryBadge = () => (
-  <Badge value={100} color={'primary'}>
+  <Badge value={100} color="primary">
     Mail
+  </Badge>
+);
+
+export const OverflowBadge = () => (
+  <Badge value={1999} color="secondary">
+    Spam
   </Badge>
 );

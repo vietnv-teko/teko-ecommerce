@@ -19,7 +19,7 @@ const Badge: React.FC<IBadge> = props => {
     <div className={cx('container', color, className)}>
       {children}
       <span className={cx({ badge: true, round: value < 10 })}>
-        {value < 100 ? value : '99+'}
+        {value < 1000 ? value : '999+'}
       </span>
     </div>
   );
