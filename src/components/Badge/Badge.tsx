@@ -16,7 +16,7 @@ const Badge: React.FC<IBadge> = props => {
   if (typeof value === 'string') value = parseInt(value);
 
   return (
-    <div className={cx('container', color, className)}>
+    <div className={cx('container', className)}>
       {children}
       <span
         className={cx({ badge: true, round: value < 10 })}
