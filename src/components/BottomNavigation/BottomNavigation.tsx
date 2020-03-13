@@ -22,22 +22,16 @@ const BottomNavigation: React.FC<IBottomNavigation> = ({
   className = '',
 }) => {
   return (
-    <div
-      className={cx({
-        bottom_nav: true,
-        hide_label: hideLabels,
-        [className]: true,
-      })}
-    >
+    <div className={cx('bottom_nav', className, { hide_label: hideLabels })}>
       {navItems.map(
-        ({ label, activeIcon, inactiveIcon, value }: any, idx: number) => {
-          let isActive = value || idx === active;
+        ({ label, activeIcon, inactiveIcon, value }: any, index: number) => {
+          let isActive = value || index === active;
           return (
             <div
-              className={cx({ nav_item: true, active: isActive })}
-              onClick={event => onChange(event, value || idx)}
+              className={cx('nav_item', { active: isActive })}
+              onClick={event => onChange(event, value || index)}
               style={{ color: isActive ? color : '' }}
-              key={idx}
+              key={index}
             >
               {isActive ? activeIcon : inactiveIcon}
               <span className={cx('label')}>{label}</span>
