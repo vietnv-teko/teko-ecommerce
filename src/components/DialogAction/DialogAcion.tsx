@@ -13,7 +13,7 @@ export type DialogActionProps = {
    * */
   className?: string;
   /**
-   * If true, button on the right
+   * Position of the button
    * */
   justify?: string;
 };

@@ -37,9 +37,9 @@ export const Custom = () => {
     <>
       <button onClick={() => setOpen(true)}>Open confirmation dialog</button>
       <ConfirmationDialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>Title</DialogTitle>
+        <DialogTitle justify="center">Title</DialogTitle>
         <DialogContent divider>Content</DialogContent>
-        <DialogAction right>
+        <DialogAction>
           <Button color="secondary" variant="outlined" size="medium">
             Cancel
           </Button>

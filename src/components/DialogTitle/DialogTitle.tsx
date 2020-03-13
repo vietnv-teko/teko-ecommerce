@@ -13,11 +13,15 @@ export type DialogTitleProps = {
    * Custom style of component
    * */
   className?: string;
+  /**
+   * Position of the title
+   * */
+  justify?: string;
 };
 const DialogTitle = (props: DialogTitleProps) => {
-  const { children, className } = props;
+  const { children, className, justify = 'left' } = props;
 
-  return <div className={cx(className, 'title')}>{children}</div>;
+  return <div className={cx(className, 'title', justify)}>{children}</div>;
 };
 
 export default DialogTitle;

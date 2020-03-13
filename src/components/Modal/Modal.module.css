@@ -1,9 +1,10 @@
 .modal.active {
-  display: block;
+  display: flex;
 }
 .modal-content {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 32px auto;
+  margin: auto;
+
   padding: 0;
   outline: 0;
   position: relative;
@@ -11,7 +12,6 @@
 .modal {
   z-index: 3;
   display: none;
-  padding-top: 100px;
   position: fixed;
   left: 0;
   top: 0;
