@@ -5,7 +5,7 @@ export default {
   title: 'Checkbox',
 };
 
-export const PrimaryCheckbox = () => {
+export const DefaultCheckbox = () => {
   let [checked, setChecked] = useState(false);
   return (
     <Checkbox
@@ -16,37 +16,14 @@ export const PrimaryCheckbox = () => {
   );
 };
 
-export const SecondaryCheckbox = () => {
-  let [checked, setChecked] = useState(false);
-  return (
-    <Checkbox
-      checked={checked}
-      onChange={(ev: any) => setChecked(ev.target.checked)}
-      color="#e00315"
-      label="SSD"
-    />
-  );
-};
 export const LargeCheckbox = () => {
   let [checked, setChecked] = useState(false);
   return (
     <Checkbox
       checked={checked}
       onChange={(ev: any) => setChecked(ev.target.checked)}
-
-      size="large"
-      label="Ram"
-    />
-  );
-};
-export const SmallCheckbox = () => {
-  let [checked, setChecked] = useState(false);
-  return (
-    <Checkbox
-      checked={checked}
-      onChange={(ev: any) => setChecked(ev.target.checked)}
       color="#e00315"
-      size="small"
+      size={28}
     />
   );
 };

@@ -9,7 +9,7 @@ interface ICheckBox {
   onChange: any;
   color?: string;
   label?: string;
-  size?: string;
+  size?: number;
   className?: string;
 }
 
@@ -17,7 +17,7 @@ const CheckBox: React.FC<ICheckBox> = ({
   checked,
   onChange,
   color = '#1669a8',
-  size = 'medium',
+  size,
   label,
   className,
 }) => {
@@ -25,9 +25,15 @@ const CheckBox: React.FC<ICheckBox> = ({
     <label className={cx('checkbox', size, className)}>
       <input type="checkbox" checked={checked} onChange={onChange} />
       {checked ? (
-        <i className={cx('icon', 'vns-Checkbox')} style={{ color }} />
+        <i
+          className={cx('icon', 'vns-Checkbox')}
+          style={{ color, fontSize: `${size}px` }}
+        />
       ) : (
-        <i className={cx('icon', 'vns-Checkbox-empty')} />
+        <i
+          className={cx('icon', 'vns-Checkbox-empty')}
+          style={{ fontSize: `${size}px` }}
+        />
       )}
       <span className={cx('label')}>{label}</span>
     </label>
