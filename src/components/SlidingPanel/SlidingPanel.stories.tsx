@@ -12,9 +12,7 @@ export const DefaultPanel = () => {
 
   return (
     <div style={{ height: '180vh' }}>
-      <Button color="primary" variant="contained" onClick={() => setOpen(true)}>
-        Open Panel
-      </Button>
+      <Button onClick={() => setOpen(true)}>Open Panel</Button>
       <SlidingPanel open={open} onClose={() => setOpen(false)}>
         <Appbar
           startIcon={
@@ -40,9 +38,7 @@ export const MaxHeight = () => {
 
   return (
     <div style={{ height: '180vh' }}>
-      <Button color="primary" variant="contained" onClick={() => setOpen(true)}>
-        Open Panel
-      </Button>
+      <Button onClick={() => setOpen(true)}>Open Panel</Button>
       <SlidingPanel open={open} onClose={() => setOpen(false)} minHeight={100}>
         <Appbar
           startIcon={

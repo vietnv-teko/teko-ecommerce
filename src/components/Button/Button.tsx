@@ -9,11 +9,20 @@ interface ButtonProps {
   onClick?: () => void;
   size?: string;
   color?: string;
+  rippleColor?: string;
   variant?: string;
 }
 
 const Button: React.FC<ButtonProps> = props => {
-  let { children, className, onClick, size, color, variant } = props;
+  let {
+    children,
+    className,
+    onClick,
+    size = 'medium',
+    color = '#1669a8',
+    rippleColor = 'rgba(255, 255, 255, 0.4)',
+    variant = 'contained',
+  } = props;
 
   const handleClick = (event: any) => {
     let button = event.target.parentElement;
@@ -26,6 +35,7 @@ const Button: React.FC<ButtonProps> = props => {
     node.className = cx('ripple');
     node.style.top = `${top}px`;
     node.style.left = `${left}px`;
+    node.style.backgroundColor = `${rippleColor}`;
 
     let rippleContainer = button.querySelector(`.${cx('ripple_container')}`);
     rippleContainer.appendChild(node);
@@ -37,10 +47,13 @@ const Button: React.FC<ButtonProps> = props => {
     if (onClick) onClick();
   };
 
+  let style = variant === 'contained' ? { backgroundColor: color } : { color };
+
   return (
     <button
       onClick={handleClick}
-      className={cx('button', size, color, variant, className)}
+      className={cx('button', size, variant, className)}
+      style={style}
     >
       {children}
       <div className={cx('ripple_container')} />

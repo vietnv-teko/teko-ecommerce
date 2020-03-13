@@ -7,16 +7,32 @@ export default {
 
 export const DefaultButton = () => <Button>Default Button</Button>;
 
-export const SmallButton = () => <Button size="small">Small Button</Button>;
-export const LargeButton = () => <Button size="large">Large Button</Button>;
-
-export const PrimaryContainedButton = () => (
-  <Button size="medium" color="primary" variant="contained">
-    Primary Contained Button
+export const SmallButton = () => (
+  <Button
+    size="small"
+    variant="outlined"
+    rippleColor={'rgba(22, 105, 168, 0.2)'}
+  >
+    Small Button
   </Button>
 );
+export const LargeButton = () => (
+  <Button
+    size="large"
+    variant="contained"
+    rippleColor={'rgba(255, 255, 255, 0.4)'}
+  >
+    Large Button
+  </Button>
+);
+
 export const SecondaryOutlinedButton = () => (
-  <Button size="medium" color="secondary" variant="outlined">
+  <Button
+    size="medium"
+    variant="outlined"
+    rippleColor={'rgba(224, 3, 21, 0.2)'}
+    color={'#d60315'}
+  >
     Secondary Outlined Button
   </Button>
 );
