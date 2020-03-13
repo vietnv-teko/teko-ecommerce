@@ -2,7 +2,7 @@
   transition: 0.1s ease-out;
   position: fixed;
   left: 50%;
-  top: 72px;
+
   z-index: 2000;
   overflow: hidden;
   display: inline-block;
@@ -23,4 +23,10 @@
   transform: scale(1) translate(-50%, 0);
   opacity: 1;
   visibility: visible;
+}
+.top {
+  top: 72px;
+}
+.bottom {
+  bottom: 88px;
 }
