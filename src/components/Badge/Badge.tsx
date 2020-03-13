@@ -11,14 +11,17 @@ interface IBadge {
 }
 
 const Badge: React.FC<IBadge> = props => {
-  let { children, color = 'primary', value, className } = props;
+  let { children, color = '#1669a8', value, className } = props;
 
   if (typeof value === 'string') value = parseInt(value);
 
   return (
     <div className={cx('container', color, className)}>
       {children}
-      <span className={cx({ badge: true, round: value < 10 })}>
+      <span
+        className={cx({ badge: true, round: value < 10 })}
+        style={{ backgroundColor: color }}
+      >
         {value < 1000 ? value : '999+'}
       </span>
     </div>

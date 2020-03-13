@@ -7,7 +7,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #E20316;
   border-radius: 10px;
   color: white;
   font-weight: 500;
@@ -23,17 +22,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-}
-
-.primary {
-  .badge {
-    background-color: #165c9a;
-  }
-}
-
-.secondary {
-  .badge {
-    background-color: #E20316;
   }
 }
