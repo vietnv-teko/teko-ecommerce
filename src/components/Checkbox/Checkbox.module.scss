@@ -46,6 +46,19 @@
   }
 }
 
+.medium {
+  width: 24px;
+  height: 24px;
+  .label {
+    font-size: 15px;
+  }
+
+  i {
+    font-size: 24px;
+  }
+}
+
+
 .small {
   width: 20px;
   height: 20px;

@@ -17,7 +17,7 @@ const CheckBox: React.FC<ICheckBox> = ({
   checked,
   onChange,
   color = 'primary',
-  size,
+  size = 'medium',
   label,
   className,
 }) => {
