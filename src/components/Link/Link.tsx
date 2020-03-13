@@ -37,6 +37,7 @@ const Link = (props: LinkProps) => {
     <a
       href={href}
       className={cx(
+        'link',
         className,
         { underline: underline === 'always' },
         { linkHover: underline === 'hover' },

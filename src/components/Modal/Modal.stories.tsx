@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-
+import classname from 'classnames/bind';
+import styles from './Modal.module.css';
+let cx = classname.bind(styles);
 export default {
   title: 'Modal',
   component: Modal,
@@ -11,7 +13,12 @@ export const Default = () => {
   return (
     <>
       <button onClick={() => setOpen(true)}>Default Modal</button>
-      <Modal content={'Content'} open={open} onClose={() => setOpen(false)} />
+      <Modal
+        children={'Content'}
+        open={open}
+        onClose={() => setOpen(false)}
+        className={cx('content-story')}
+      />
     </>
   );
 };
@@ -21,10 +28,11 @@ export const AnimateTop = () => {
     <>
       <button onClick={() => setOpen(true)}>AnimateTop</button>
       <Modal
-        content={'Content'}
+        children={'Content'}
         open={open}
         onClose={() => setOpen(false)}
         animation="top"
+        className={cx('content-story')}
       />
     </>
   );
@@ -35,10 +43,11 @@ export const AnimateBottom = () => {
     <>
       <button onClick={() => setOpen(true)}>AnimateBottom</button>
       <Modal
-        content={'Content'}
+        children={'Content'}
         open={open}
         onClose={() => setOpen(false)}
         animation="bottom"
+        className={cx('content-story')}
       />
     </>
   );

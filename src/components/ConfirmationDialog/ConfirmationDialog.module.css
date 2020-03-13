@@ -1,0 +1,9 @@
+.confirmation-dialog {
+  width: 50%;
+  max-height: 435px;
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}

@@ -22,11 +22,16 @@ const Breadcrumb = (props: BreadcrumbProps) => {
   const { className, children, separator = '/' } = props;
   useEffect(() => {
     document
-      .querySelectorAll('a')
+      .getElementById('breadcrumb')
+      ?.querySelectorAll(`.${cx('link')}`)
       .forEach(item => item.after(' ' + separator + ' '));
   }, [separator]);
 
-  return <ul className={cx('breadcrumb', className)}>{children}</ul>;
+  return (
+    <ul id="breadcrumb" className={cx('breadcrumb', className)}>
+      {children}
+    </ul>
+  );
 };
 
 export default Breadcrumb;

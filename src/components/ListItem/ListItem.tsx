@@ -11,18 +11,18 @@ export type ListItemProps = {
   className?: string;
   left?: React.ReactNode;
   right?: React.ReactNode;
-  label: string;
+  middle?: React.ReactNode;
   onClick?: () => void;
 };
 const ListItem = (props: ListItemProps) => {
-  const { className, left, label, right, onClick } = props;
+  const { className, left, middle, right, onClick } = props;
 
   return (
-    <div className={cx('list-item', className)} onClick={onClick}>
+    <li className={cx('list-item', className)} onClick={onClick}>
       {left}
-      <div>{label}</div>
+      {middle}
       {right}
-    </div>
+    </li>
   );
 };
 

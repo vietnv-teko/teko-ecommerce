@@ -1,0 +1,8 @@
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  font-family: Roboto, 'sans-serif';
+  color: black;
+  padding: 16px;
+  text-transform: uppercase;
+}
