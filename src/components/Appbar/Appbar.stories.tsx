@@ -13,7 +13,7 @@ export const AppbarWith2Icons = () => {
         <i
           className="icon vns-Back"
           onClick={action('back')}
-          style={{ fontSize: '24px' }}
+          style={{ fontSize: '24px', padding: '16px' }}
         />
       }
       middle="Giỏ hàng"
@@ -21,7 +21,7 @@ export const AppbarWith2Icons = () => {
         <i
           className="icon vns-Cart"
           onClick={action('go to cart')}
-          style={{ fontSize: '24px' }}
+          style={{ fontSize: '24px', padding: '16px' }}
         />
       }
       position="sticky"
