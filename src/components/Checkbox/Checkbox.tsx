@@ -16,7 +16,7 @@ interface ICheckBox {
 const CheckBox: React.FC<ICheckBox> = ({
   checked,
   onChange,
-  color = 'primary',
+  color = '#1669a8',
   size = 'medium',
   label,
   className,
@@ -25,7 +25,7 @@ const CheckBox: React.FC<ICheckBox> = ({
     <label className={cx('checkbox', size, className)}>
       <input type="checkbox" checked={checked} onChange={onChange} />
       {checked ? (
-        <i className={cx('icon', color, 'vns-Checkbox')} />
+        <i className={cx('icon', 'vns-Checkbox')} style={{ color }} />
       ) : (
         <i className={cx('icon', 'vns-Checkbox-empty')} />
       )}

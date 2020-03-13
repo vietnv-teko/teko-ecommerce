@@ -22,7 +22,7 @@ export const SecondaryCheckbox = () => {
     <Checkbox
       checked={checked}
       onChange={(ev: any) => setChecked(ev.target.checked)}
-      color="secondary"
+      color="#e00315"
       label="SSD"
     />
   );
@@ -33,7 +33,7 @@ export const LargeCheckbox = () => {
     <Checkbox
       checked={checked}
       onChange={(ev: any) => setChecked(ev.target.checked)}
-      color="primary"
+
       size="large"
       label="Ram"
     />
@@ -45,7 +45,7 @@ export const SmallCheckbox = () => {
     <Checkbox
       checked={checked}
       onChange={(ev: any) => setChecked(ev.target.checked)}
-      color="primary"
+      color="#e00315"
       size="small"
     />
   );
