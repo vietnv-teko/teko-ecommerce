@@ -7,11 +7,12 @@ let cx = classNames.bind(styles);
 interface IBadge {
   color?: any;
   value: number | string;
+  max?: number;
   className?: string;
 }
 
 const Badge: React.FC<IBadge> = props => {
-  let { children, color = '#1669a8', value, className } = props;
+  let { children, color = '#1669a8', value, className, max = 999 } = props;
 
   if (typeof value === 'string') value = parseInt(value);
 
@@ -19,10 +20,10 @@ const Badge: React.FC<IBadge> = props => {
     <div className={cx('container', className)}>
       {children}
       <span
-        className={cx({ badge: true, round: value < 10 })}
+        className={cx('badge', { round: value < 10 && max < 10 })}
         style={{ backgroundColor: color }}
       >
-        {value < 1000 ? value : '999+'}
+        {value <= max ? value : `${max}+`}
       </span>
     </div>
   );
