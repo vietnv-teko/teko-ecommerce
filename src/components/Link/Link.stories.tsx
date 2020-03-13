@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from './Link';
+import { browserHistory } from './constant';
 export default {
   title: 'Link',
   component: Link,
@@ -18,13 +19,13 @@ export const Hover = () => {
     />
   );
 };
-export const underline = () => {
+export const Underline = () => {
   return (
     <Link
       text="vnshop"
-      href="https://vnshop.vn"
       color="blue"
       underline="always"
+      onClick={() => browserHistory.replace('/?path=/story/divider--default')}
     />
   );
 };

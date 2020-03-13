@@ -1,5 +1,8 @@
 import React from 'react';
+import styles from './Textarea.module.scss';
+import classNames from 'classnames/bind';
 
+let cx = classNames.bind(styles);
 export type TextareaProps = {
   /**
    * Number of rows to display
@@ -34,7 +37,7 @@ const Textarea = (props: TextareaProps) => {
       cols={cols}
       placeholder={placeholder}
       onChange={onChange}
-      className={className}
+      className={cx(className)}
     >
       {value}
     </textarea>

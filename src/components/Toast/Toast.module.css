@@ -2,18 +2,14 @@
   transition: 0.1s ease-out;
   position: fixed;
   left: 50%;
-
   z-index: 2000;
   overflow: hidden;
-  display: inline-block;
   padding: 8px 16px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   outline: 0;
   border-radius: 20px;
   white-space: nowrap;
-}
-.toast.inactive {
   opacity: 0;
   visibility: hidden;
   transform: scale(0.33) translate(-50%, 0);

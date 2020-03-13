@@ -9,6 +9,9 @@ export type ListProps = {
    * Custom style of component
    * */
   className?: string;
+  /**
+   * Content of List
+   * */
   children: React.ReactNode;
 };
 const List = (props: ListProps) => {

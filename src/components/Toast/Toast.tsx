@@ -31,7 +31,7 @@ const Toast = (props: ToastProps) => {
 
   return (
     <div
-      className={cx('toast', className, open ? 'active' : 'inactive', position)}
+      className={cx('toast', className, { active: open }, position)}
       onClick={onClick}
     >
       {content}

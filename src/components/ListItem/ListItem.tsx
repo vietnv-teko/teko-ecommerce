@@ -9,19 +9,15 @@ export type ListItemProps = {
    * Custom style of component
    * */
   className?: string;
-  left?: React.ReactNode;
-  right?: React.ReactNode;
-  middle?: React.ReactNode;
+  children: React.ReactNode;
   onClick?: () => void;
 };
 const ListItem = (props: ListItemProps) => {
-  const { className, left, middle, right, onClick } = props;
+  const { className, children, onClick } = props;
 
   return (
     <li className={cx('list-item', className)} onClick={onClick}>
-      {left}
-      {middle}
-      {right}
+      {children}
     </li>
   );
 };

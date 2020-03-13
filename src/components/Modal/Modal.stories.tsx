@@ -14,11 +14,12 @@ export const Default = () => {
     <>
       <button onClick={() => setOpen(true)}>Default Modal</button>
       <Modal
-        children={'Content'}
         open={open}
         onClose={() => setOpen(false)}
         className={cx('content-story')}
-      />
+      >
+        Content
+      </Modal>
     </>
   );
 };
@@ -28,12 +29,13 @@ export const AnimateTop = () => {
     <>
       <button onClick={() => setOpen(true)}>AnimateTop</button>
       <Modal
-        children={'Content'}
         open={open}
         onClose={() => setOpen(false)}
         animation="top"
         className={cx('content-story')}
-      />
+      >
+        Content
+      </Modal>
     </>
   );
 };
