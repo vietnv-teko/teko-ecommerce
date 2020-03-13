@@ -19,6 +19,14 @@ const getDiscountPercent = (product: IProductItem) => {
   return discount;
 };
 
+export const cleanObject = (obj: any) => {
+  if (!obj) {
+    return {};
+  }
+  Object.keys(obj).forEach(k => !obj[k] && delete obj[k]);
+  return obj;
+};
+
 export default {
   formatCurrency,
   getBestPrice,

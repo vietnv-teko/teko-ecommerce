@@ -8,6 +8,7 @@
   overflow: hidden;
   padding: 8px 10px;
   font-size: 14px;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -51,42 +52,25 @@
   font-size: 15px;
 }
 
-.primary {
-  color: #165c9a;
-}
-
-.secondary {
-  color: rgb(196, 3, 22);
-}
-
 .outlined {
-  &.secondary {
-    .ripple {
-      background-color: rgba(196, 3, 22, 0.2) !important;
-    }
-  }
-
-  &.primary {
-    .ripple {
-      background-color: rgba(#165c9a, 0.2) !important;
-    }
-  }
-
   background-color: white;
   border: 1px solid currentColor;
+
+  &.small {
+    padding: 5px 7px;
+  }
+
+  &.medium {
+    padding: 7px 9px;
+  }
+
+  &.large {
+    padding: 7px 9px;
+  }
 }
 
 .contained {
-  .ripple {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-  }
   color: white;
-  &.secondary {
-    background-color: rgb(196, 3, 22);
-  }
-  &.primary {
-    background-color: #165c9a;
-  }
 }
 
 @keyframes fadeOut {

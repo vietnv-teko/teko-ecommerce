@@ -1,9 +1,9 @@
 import React from 'react';
-import Grid from './Grid';
+import HorizontalScroll from './HorizontalScroll';
 import ProductItem from 'components/ProductItem/index';
 export default {
-  title: 'Grid',
-  component: Grid,
+  title: 'HorizontalScroll',
+  component: HorizontalScroll,
 };
 
 const indents: any = [];
@@ -24,13 +24,10 @@ const product = {
     },
   ],
 };
-
 for (let i = 0; i < 10; i++) {
   indents.push(<ProductItem type="grid" product={product} />);
 }
 
 export const Default = () => (
-  <Grid justify="center" align="center" colNum={5} rowGap={10} colGap={10}>
-    {indents}
-  </Grid>
+  <HorizontalScroll slidesPerView={5}>{indents}</HorizontalScroll>
 );
