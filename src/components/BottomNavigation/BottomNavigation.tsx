@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './BottomNavigation.module.scss';
 import classNames from 'classnames/bind';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 let cx = classNames.bind(styles);
 
@@ -9,37 +8,42 @@ interface IBottomNavigation {
   navItems: any[];
   color?: string;
   hideLabels?: boolean;
+  active: string | number;
+  onChange: any;
 }
 
-const BottomNavigation: React.FC<IBottomNavigation & RouteComponentProps> = ({
-  history,
-  color = 'secondary',
+const BottomNavigation: React.FC<IBottomNavigation> = ({
+  color = '#1669a8',
   hideLabels = true,
   navItems,
+  active,
+  onChange,
 }) => {
   return (
     <div
       className={cx({
         bottom_nav: true,
-        [color]: true,
         hide_label: hideLabels,
       })}
     >
-      {navItems.map(({ path, label, activeIcon, inactiveIcon }: any) => {
-        let active = window.location.pathname === path;
-        return (
-          <div
-            className={cx({ nav_item: true, active })}
-            onClick={() => history.push(path)}
-            style={{flexBasis: `${100 / navItems.length}%`}}
-          >
-            {active ? activeIcon : inactiveIcon}
-            <span className={cx('label')}>{label}</span>
-          </div>
-        );
-      })}
+      {navItems.map(
+        ({ label, activeIcon, inactiveIcon, value }: any, idx: number) => {
+          let isActive = value || idx === active;
+          return (
+            <div
+              className={cx({ nav_item: true, active: isActive })}
+              onClick={event => onChange(event, value || idx)}
+              style={{ color: isActive ? color : '' }}
+              key={idx}
+            >
+              {isActive ? activeIcon : inactiveIcon}
+              <span className={cx('label')}>{label}</span>
+            </div>
+          );
+        },
+      )}
     </div>
   );
 };
 
-export default withRouter(BottomNavigation);
+export default BottomNavigation;

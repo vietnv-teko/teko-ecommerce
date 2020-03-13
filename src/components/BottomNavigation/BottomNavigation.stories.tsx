@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { action } from '@storybook/addon-actions';
 import BottomNavigation from './BottomNavigation';
-import { BrowserRouter } from 'react-router-dom';
 
 export default {
   title: 'BottomNavigation',
-  decorators: [(storyFn: any) => <BrowserRouter>{storyFn()}</BrowserRouter>],
 };
 
 let navItems = [
@@ -40,14 +39,36 @@ let navItems = [
   },
 ];
 
-export const PrimaryNavigation = () => (
-  <BottomNavigation navItems={navItems} color="primary" />
-);
+export const PrimaryNavigation = () => {
+  let [active, setActive] = useState(0);
 
-export const SecondaryNavigationShowLabels = () => (
-  <BottomNavigation
-    navItems={navItems.slice(0, 4)}
-    color="secondary"
-    hideLabels={false}
-  />
-);
+  return (
+    <BottomNavigation
+      navItems={navItems}
+      active={active}
+      //@ts-ignore
+      onChange={(event: any, value: any) => {
+        action('onChange value');
+        setActive(value);
+      }}
+    />
+  );
+};
+
+export const SecondaryNavigationShowLabels = () => {
+  let [active, setActive] = useState(0);
+
+  return (
+    <BottomNavigation
+      navItems={navItems.slice(0, 4)}
+      color="#e00315"
+      active={active}
+      //@ts-ignore
+      onChange={(event: any, value: any) => {
+        action('onChange value');
+        setActive(value);
+      }}
+      hideLabels={false}
+    />
+  );
+};

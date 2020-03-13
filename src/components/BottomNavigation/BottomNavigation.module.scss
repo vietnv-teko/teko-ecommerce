@@ -12,14 +12,6 @@
   height: 60px;
   box-shadow: 0.5rem 0 1rem 0 rgba(0, 0, 0, 0.08);
 
-  @media only screen and (max-width: 380px) {
-    padding: 8px;
-  }
-
-  @media only screen and (max-width: 340px) {
-    padding: 8px 0;
-  }
-
   .nav_item {
     display: flex;
     flex-direction: column;
@@ -30,6 +22,7 @@
     position: relative;
     transition: all 0.2s;
     cursor: pointer;
+    flex: 1;
 
     i {
       margin-bottom: 2px;
@@ -72,13 +65,5 @@
         }
       }
     }
-  }
-
-  &.primary .nav_item.active {
-    color: #1669a8;
-  }
-
-  &.secondary .nav_item.active {
-    color: rgb(224, 3, 21);
   }
 }
