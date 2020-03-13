@@ -1,0 +1,36 @@
+.sliding_panel {
+  .overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .content {
+    border-radius: 10px;
+    position: fixed;
+    background-color: white;
+    z-index: 101;
+    opacity: 0;
+    overflow: hidden;
+
+    &.open {
+      opacity: 1;
+    }
+  }
+}
+
+.bottom {
+  .content {
+    transition: top 0.4s ease-out, opacity 0.4s ease;
+    left: 0;
+    right: 0;
+    top: 105%;
+    bottom: -5%;
+  }
+}
