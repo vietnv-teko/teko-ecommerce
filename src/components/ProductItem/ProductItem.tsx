@@ -34,10 +34,7 @@ const ProductItem: React.FC<ProductItemProps> = props => {
       {...rest}
     >
       <div className={cx('product-image')}>
-        <LazyImage
-          src={(product.images && product.images[0].url) || ''}
-          cover
-        />
+        <LazyImage src={(product.images && product.images[0].url) || ''} />
       </div>
       <div className={cx('product-content')}>
         <div className={cx('name')}>

@@ -1,34 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import styles from './LazyImage.module.scss';
 import classNames from 'classnames/bind';
+import { cleanObject } from 'helpers';
 
 let cx = classNames.bind(styles);
-type LazyImageProps = {
+export type LazyImageProps = {
+  /**
+   * The image URL. This prop is mandatory
+   * */
   src: string;
+  /**
+   * The action when click image
+   * */
   onClick?: () => void;
+  /**
+   * Custom class
+   * */
   className?: string;
-  cover?: boolean;
+  /**
+   * Prevents the image from being cropped if it doesn't fit
+   * */
   contain?: boolean;
+  /**
+   * Sets the height for the component.
+   * */
+  height?: number;
+  /**
+   * Calculated as width/height, so for a 1920x1080px image this will be 1.7778. Will be calculated automatically if omitted
+   * */
+  aspectRatio?: number;
 };
-const LazyImage: React.FC<LazyImageProps> = props => {
-  const { src, onClick, className, cover, contain } = props;
+const LazyImage = (props: LazyImageProps) => {
+  const { src, onClick, className, contain, aspectRatio = 1, height } = props;
   const [imageLoaded, setImageLoaded] = useState(false);
   let objImg = new Image();
   objImg.src = src;
   objImg.onload = () => {
     setImageLoaded(true);
   };
+  let style = cleanObject({
+    paddingBottom: !height ? `${100 / aspectRatio}%` : '',
+    height: height ? `${height}px` : '',
+  });
   useEffect(() => {
     setImageLoaded(false);
     // eslint-disable-next-line
   }, [window.location.href]);
   return (
     <div onClick={onClick} className={cx('image')}>
-      <div className={cx('sizer')}></div>
+      <div style={style} className={cx('sizer')}></div>
       <div
         className={cx(
           className,
-          { cover: cover },
+          { cover: !contain },
           { contain: contain },
           '__image',
         )}
