@@ -7,7 +7,6 @@ let cx = classNames.bind(styles);
 interface ISlidingPanel {
   open: boolean;
   onClose: any;
-  position?: string;
   maxHeight?: number;
   minHeight?: number;
 }
@@ -15,12 +14,10 @@ interface ISlidingPanel {
 const SlidingPanel: React.FC<ISlidingPanel> = ({
   open,
   onClose,
-  position,
   maxHeight = 100,
   minHeight = 0,
   children,
 }) => {
-  position = 'bottom';
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -69,9 +66,9 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
   }
 
   return (
-    <div className={cx({ sliding_panel: true, open, [position]: true })}>
+    <div className={cx('sliding_panel', 'bottom', { open })}>
       {open && <div className={cx('overlay')} onClick={handleClick} />}
-      <div className={cx({ content: true, open })} ref={contentRef}>
+      <div className={cx('content', { open })} ref={contentRef}>
         {children}
       </div>
     </div>
