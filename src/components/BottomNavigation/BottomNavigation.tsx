@@ -6,28 +6,35 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 let cx = classNames.bind(styles);
 
 interface IBottomNavigation {
-  showLabels?: boolean;
   navItems: any[];
   color?: string;
+  hideLabels?: boolean;
 }
 
 const BottomNavigation: React.FC<IBottomNavigation & RouteComponentProps> = ({
   history,
-  color,
-  showLabels,
+  color = 'secondary',
+  hideLabels = true,
   navItems,
 }) => {
   return (
-    <div className={cx('bottom_nav', color)}>
+    <div
+      className={cx({
+        bottom_nav: true,
+        [color]: true,
+        hide_label: hideLabels,
+      })}
+    >
       {navItems.map(({ path, label, activeIcon, inactiveIcon }: any) => {
         let active = window.location.pathname === path;
         return (
           <div
-            className={cx({ nav_item: true, active, showLabels })}
+            className={cx({ nav_item: true, active })}
             onClick={() => history.push(path)}
+            style={{flexBasis: `${100 / navItems.length}%`}}
           >
             {active ? activeIcon : inactiveIcon}
-            {showLabels && <span className={cx('label')}>{label}</span>}
+            <span className={cx('label')}>{label}</span>
           </div>
         );
       })}

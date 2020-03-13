@@ -12,16 +12,24 @@
   height: 60px;
   box-shadow: 0.5rem 0 1rem 0 rgba(0, 0, 0, 0.08);
 
+  @media only screen and (max-width: 380px) {
+    padding: 8px;
+  }
+
+  @media only screen and (max-width: 340px) {
+    padding: 8px 0;
+  }
+
   .nav_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     color: #848788;
-    flex-basis: 20%;
     height: 100%;
     position: relative;
-    transition: transform 0.2s ease-out;
+    transition: all 0.2s;
+    cursor: pointer;
 
     i {
       margin-bottom: 2px;
@@ -29,26 +37,40 @@
     }
 
     .label {
-      font-size: 8px;
-      visibility: hidden;
-      opacity: 0;
-      transition: font-size 0.2s ease-out, opacity 0.2s ease-out;
-      position: absolute;
-      bottom: 0;
-      transform: translateY(8px);
+      font-size: 11px;
+      transition: font-size 0.2s, opacity 0.2s;
     }
 
     &.active {
       .label {
         visibility: initial;
-        font-size: 12px;
+        font-size: 13px;
         opacity: 1;
         line-height: 1.6;
       }
     }
+  }
 
-    &.showLabels.active {
-      transform: translateY(-8px);
+  &.hide_label {
+    .nav_item {
+      .label {
+        position: absolute;
+        bottom: -25%;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 6px;
+      }
+
+      &.active {
+        transform: translateY(-8px);
+
+        .label {
+          opacity: 1;
+          visibility: initial;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+      }
     }
   }
 
