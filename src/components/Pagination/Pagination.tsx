@@ -30,7 +30,7 @@ type PProps = {
    */
   lastPageText: string;
   /**
-   * previous page text 
+   * previous page text
    */
   previousPageText: string;
   /**
@@ -41,29 +41,28 @@ type PProps = {
    * theme
    */
   theme: string;
-  /** border color */
-  borderColor: string;
   /**
    * number of pages next to active page
    */
-  numberOfPagesNextToActivePage: number
-  /**change current page */
-  changeCurrentPage: () => void;
+  numberOfPagesNextToActivePage: number;
+  // /**change current page */
+  // changeCurrentPage: () => void;
 };
 const Page = (props: any) => {
   const { className, label, pageNum } = props;
   return (
-    <li className={cs(className)}
-      onClick={() => props.changeCurrentPage(pageNum)}>
-      <a>
-        {label}
-      </a>
+    <li
+      className={cs(className)}
+      onClick={() => props.changeCurrentPage(pageNum)}
+    >
+      <span>{label}</span>
     </li>
-  )
-}
+  );
+};
 const Paginate = (props: any) => {
   var { currentPage, numberOfPagesNextToActivePage, pageNum } = props;
-  let current = currentPage,
+  let pageToShow = 8,
+    current = currentPage,
     last = pageNum,
     delta = numberOfPagesNextToActivePage,
     left = current - delta,
@@ -72,79 +71,111 @@ const Paginate = (props: any) => {
     rangeWithEllipsis = [],
     l = undefined,
     isEllipsisIncludes = false;
-
+  // if (left + right < pageToShow) {
+  //   if (left < right) {
+  //     right += pageToShow - left - right;
+  //   } else if (right < left) {
+  //     left += pageToShow - left - right;
+  //   }
+  // }
   for (let i = 1; i <= last; i++) {
-    if (i === 1 || i === last || i >= left && i < right) {
-      range.push(i)
+    if (i === 1 || i === last || (i >= left && i < right)) {
+      range.push(i);
     }
   }
-
+  console.log(range);
   for (let i of range) {
-
     if (l && i - l !== 1) {
       rangeWithEllipsis.push(
-        <li key={isEllipsisIncludes ? -1 : 0} className={cs("pageElli")}>
-          <a> . . .</a>
-        </li>
+        <li key={isEllipsisIncludes ? -1 : 0} className={cs('pageElli')}>
+          <span> . . .</span>
+        </li>,
       );
       isEllipsisIncludes = true;
     }
     rangeWithEllipsis.push(
-      <li key={i} className={cs(currentPage === i ? "is-active" : "page")}
-        onClick={(e) => { e.preventDefault(); props.changeCurrentPage(i) }}>
-        <a>{i}</a>
-      </li>
+      <li
+        key={i}
+        className={cs(currentPage === i ? 'is-active' : 'page')}
+        onClick={e => {
+          e.preventDefault();
+          props.changeCurrentPage(i);
+        }}
+      >
+        <span>{i}</span>
+      </li>,
     );
     l = i;
   }
   return rangeWithEllipsis;
-}
+};
 
 const Pagination = (props: PProps) => {
   const {
-    theme, totalSize, sizePerPage, currentPage, showFirstLastPages,
-    firstPageText, lastPageText, previousPageText, nextPageText, numberOfPagesNextToActivePage, changeCurrentPage
+    theme,
+    totalSize,
+    sizePerPage,
+    currentPage,
+    showFirstLastPages,
+    firstPageText,
+    lastPageText,
+    previousPageText,
+    nextPageText,
   } = props;
   let totalItem = totalSize ? totalSize : 10;
   let itemPerPage = sizePerPage ? sizePerPage : 20;
   let pageNum = Math.ceil(totalItem / itemPerPage);
-  return (<div>
-    <div className={cs(`react-pagination-js-${theme}`)}>
-      <ul>
-        {
-          showFirstLastPages ?
-            <Page {...props} className={cs('page', currentPage === 1 ? 'disabled' : '')}
-              label={firstPageText} pageNum={1} /> :
-            null
-        }
-        <Page {...props} className={cs('page', currentPage === 1 ? 'disabled' : '')}
-          label={previousPageText} pageNum={currentPage - 1} />
+  return (
+    <div>
+      <div className={cs(`react-pagination-js-${theme}`)}>
+        <ul>
+          {showFirstLastPages && (
+            <Page
+              {...props}
+              className={cs('page', currentPage === 1 ? 'disabled' : '')}
+              label={firstPageText}
+              pageNum={1}
+            />
+          )}
+          <Page
+            {...props}
+            className={cs('page', currentPage === 1 ? 'disabled' : '')}
+            label={previousPageText}
+            pageNum={currentPage - 1}
+          />
 
-        <Paginate {...props} pageNum={pageNum} />
-        <Page {...props} className={cs('page', currentPage === pageNum ? 'disabled' : '')}
-          label={nextPageText} pageNum={currentPage + 1} />
-        {
-          showFirstLastPages ?
-            <Page {...props} className={cs('page', currentPage === pageNum ? 'disabled' : '')}
-              label={lastPageText} pageNum={pageNum} /> :
-            null
-        }
-      </ul>
+          <Paginate {...props} pageNum={pageNum} />
+          <Page
+            {...props}
+            className={cs('page', currentPage === pageNum ? 'disabled' : '')}
+            label={nextPageText}
+            pageNum={currentPage + 1}
+          />
+          {showFirstLastPages && (
+            <Page
+              {...props}
+              className={cs('page', currentPage === pageNum ? 'disabled' : '')}
+              label={lastPageText}
+              pageNum={pageNum}
+            />
+          )}
+        </ul>
+      </div>
     </div>
-  </div>);
-}
+  );
+};
 
 Pagination.defaultProps = {
-  theme: "default",
+  theme: 'default',
   currentPage: 1,
   totalSize: 10,
   sizePerPage: 20,
-  numberOfPagesNextToActivePage: 1,
+  numberOfPagesNextToActivePage: 3,
   showFirstLastPages: false,
-  lastPageText: "»",
-  firstPageText: "«",
-  nextPageText: "⟩",
-  previousPageText: "⟨"
+  lastPageText: '»',
+  firstPageText: '«',
+  nextPageText: '⟩',
+  previousPageText: '⟨',
 };
 
 export default Pagination;
