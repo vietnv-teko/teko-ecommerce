@@ -19,10 +19,15 @@ export const Default = () => {
         <DialogTitle>Title</DialogTitle>
         <DialogContent>Content</DialogContent>
         <DialogAction justify="right">
-          <Button color="secondary" variant="outlined" size="medium">
+          <Button
+            className="mr16"
+            color="#eb1f3a"
+            variant="outlined"
+            size="medium"
+          >
             Cancel
           </Button>
-          <Button color="secondary" variant="contained" size="medium">
+          <Button color="#eb1f3a" variant="contained" size="medium">
             Agree
           </Button>
         </DialogAction>
@@ -40,10 +45,20 @@ export const Custom = () => {
         <DialogTitle justify="center">Đăng xuất</DialogTitle>
         <DialogContent>Bạn có chắc chắn muốn đăng xuất?</DialogContent>
         <DialogAction>
-          <Button color="secondary" variant="outlined" size="medium">
+          <Button
+            className="mr16 w100"
+            color="#eb1f3a"
+            variant="outlined"
+            size="small"
+          >
             Đóng
           </Button>
-          <Button color="secondary" variant="contained" size="medium">
+          <Button
+            className="w100"
+            color="#eb1f3a"
+            variant="contained"
+            size="small"
+          >
             Xác nhận
           </Button>
         </DialogAction>
