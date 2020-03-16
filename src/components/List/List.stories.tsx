@@ -27,22 +27,24 @@ export const Default = () => {
     ],
   };
   return (
-    <List>
-      <ListItem onClick={action('Click A')}>
-        <ProductItem type="list" product={product} />
-      </ListItem>
-      <Divider />
-      <ListItem onClick={action('Click A')}>
-        <ProductItem type="list" product={product} />
-      </ListItem>
-      <Divider />
-      <ListItem onClick={action('Click A')}>
-        <ProductItem type="list" product={product} />
-      </ListItem>
-      <Divider />
-      <ListItem onClick={action('Click A')}>
-        <ProductItem type="list" product={product} />
-      </ListItem>
-    </List>
+    <div style={{ width: '300px' }}>
+      <List>
+        <ListItem onClick={action('Click A')}>
+          <ProductItem type="list" product={product} />
+        </ListItem>
+        <Divider />
+        <ListItem onClick={action('Click A')}>
+          <ProductItem type="list" product={product} />
+        </ListItem>
+        <Divider />
+        <ListItem onClick={action('Click A')}>
+          <ProductItem type="list" product={product} />
+        </ListItem>
+        <Divider />
+        <ListItem onClick={action('Click A')}>
+          <ProductItem type="list" product={product} />
+        </ListItem>
+      </List>
+    </div>
   );
 };
