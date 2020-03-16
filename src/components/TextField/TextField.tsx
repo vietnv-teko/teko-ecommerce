@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styles from './TextField.module.scss';
 import classNames from 'classnames/bind';
 
@@ -6,13 +6,14 @@ let cs = classNames.bind(styles);
 type TFProps = {
   disabled?: boolean; //Whether the input is disabled.
   maxLength?: number; //max length
-  prefix?: string | ReactNode; //The prefix icon for the Input.
-  suffix?: string | ReactNode; //The suffix icon for the Input.
+  prefix?: string | ReactNode; //The prefix icon/text for the Input.
+  suffix?: string | ReactNode; //The suffix icon/text for the Input.
   type?: string; //The type of input
-  value?: string; //The input content value
-  onChange?: (e: any) => void; //callback when user input
+  // value?: string; //The input content value
+  onChange?: () => void; //callback when user input
   onPressEnter?: () => void; //The callback function that is triggered when Enter key is pressed.
   allowClear?: boolean; //allow to remove input content with clear icon
+  placeHolder?: string; //input place holder
 };
 export default ({
   disabled,
@@ -20,29 +21,38 @@ export default ({
   prefix,
   suffix,
   type,
-  onChange,
   onPressEnter,
   allowClear,
+  onChange,
+  placeHolder,
   ...rest
 }: TFProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [, setInputValue] = useState('');
   const pressEnterAction = (e: any) => {
     if (e.key === 'Enter') {
       onPressEnter && onPressEnter();
     }
   };
+
+  const onInputChange = (e: any) => {
+    setInputValue(e.target.value);
+    onChange && onChange();
+  };
   return (
-    <div>
-      {prefix && <span className="tek-input-prefix">{prefix}</span>}
+    <span className={cs(prefix && 'input-affix-wrapper')}>
+      {prefix && <span className={cs(prefix && 'input-prefix')}>{prefix}</span>}
       <input
-        className={cs('tek-input-wrapper')}
+        className={cs('input-wrapper')}
         {...rest}
         maxLength={maxLength || 524288}
         type={`${type || 'string'}`}
         disabled={disabled ? disabled : false}
-        onChange={onChange}
+        onChange={onInputChange}
         onKeyPress={pressEnterAction}
+        placeholder={placeHolder}
       ></input>
-      {suffix && <span className="tek-input-suffix">{suffix}</span>}
-    </div>
+      {suffix && <span className={cs(suffix && 'input-suffix')}>{suffix}</span>}
+    </span>
   );
 };

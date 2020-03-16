@@ -70,3 +70,9 @@
     border: 3px solid #2ecc71;
     border-radius: 100%;
   }
+
+  li.page.disabled {
+    cursor: default;
+    pointer-events: none;
+    color: #999999;
+  }
