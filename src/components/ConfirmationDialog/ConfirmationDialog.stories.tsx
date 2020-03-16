@@ -37,14 +37,14 @@ export const Custom = () => {
     <>
       <button onClick={() => setOpen(true)}>Open confirmation dialog</button>
       <ConfirmationDialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle justify="center">Title</DialogTitle>
-        <DialogContent divider>Content</DialogContent>
+        <DialogTitle justify="center">Đăng xuất</DialogTitle>
+        <DialogContent>Bạn có chắc chắn muốn đăng xuất?</DialogContent>
         <DialogAction>
           <Button color="secondary" variant="outlined" size="medium">
-            Cancel
+            Đóng
           </Button>
           <Button color="secondary" variant="contained" size="medium">
-            Agree
+            Xác nhận
           </Button>
         </DialogAction>
       </ConfirmationDialog>
