@@ -11,6 +11,11 @@ interface ButtonProps {
   color?: string;
   rippleColor?: string;
   variant?: string;
+  rounded?: boolean;
+  icon?: boolean;
+  round?: boolean;
+  flat?: boolean;
+  text?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = props => {
@@ -22,6 +27,11 @@ const Button: React.FC<ButtonProps> = props => {
     color = '#1669a8',
     rippleColor = 'rgba(255, 255, 255, 0.4)',
     variant = 'contained',
+    rounded,
+    icon,
+    round,
+    flat,
+    text,
   } = props;
 
   const handleClick = (event: any) => {
@@ -52,7 +62,15 @@ const Button: React.FC<ButtonProps> = props => {
   return (
     <button
       onClick={handleClick}
-      className={cx('button', size, variant, className)}
+      className={cx(
+        'button',
+        size,
+        variant,
+        className,
+        { rounded },
+        { round: round || icon },
+        { flat: flat || icon || text },
+      )}
       style={style}
     >
       {children}
