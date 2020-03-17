@@ -1,0 +1,32 @@
+.nav_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #848788;
+  height: 100%;
+  position: relative;
+  transition: all 0.2s;
+  cursor: pointer;
+  flex: 1;
+
+  i {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .label {
+    font-size: 13px;
+    transition: font-size 0.2s, opacity 0.2s;
+  }
+
+  &.hide-label {
+    .label {
+      position: absolute;
+      bottom: -25%;
+      opacity: 0;
+      visibility: hidden;
+      font-size: 6px;
+    }
+  }
+}
