@@ -1,0 +1,12 @@
+.price {
+  .final-price {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: #848788;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}

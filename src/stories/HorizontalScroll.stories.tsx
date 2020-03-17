@@ -25,9 +25,21 @@ const product = {
   ],
 };
 for (let i = 0; i < 10; i++) {
-  indents.push(<ProductItem type="grid" product={product} />);
+  indents.push(
+    <ProductItem
+      type="grid"
+      img={product.images[0].url}
+      discount="5%"
+      name={product.name}
+      finalPrice={product.price.sellPrice}
+      oldPrice={product.price.supplierSalePrice}
+      sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+    />,
+  );
 }
 
 export const Default = () => (
-  <HorizontalScroll slidesPerView={5}>{indents}</HorizontalScroll>
+  <div style={{ width: '800px' }}>
+    <HorizontalScroll slidesPerView={5}>{indents}</HorizontalScroll>
+  </div>
 );

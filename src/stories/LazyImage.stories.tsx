@@ -7,7 +7,11 @@ export default {
 };
 
 export const DefaultImage = () => (
-  <LazyImage src="https://1.img-dpreview.com/files/p/TS1200x900~sample_galleries/9737454830/7579648364.jpg" />
+  <LazyImage
+    height={300}
+    contain
+    src="https://1.img-dpreview.com/files/p/TS1200x900~sample_galleries/9737454830/7579648364.jpg"
+  />
 );
 
 export const ContainImage = () => {

@@ -21,8 +21,8 @@ const DiscountTag: React.FC<IDiscountTag> = props => {
     className,
     theme = 1,
     children,
-    top,
-    right,
+    top = '0px',
+    right = '0px',
     bottom,
     left,
   } = props;
