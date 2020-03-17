@@ -1,27 +1,43 @@
 import React from 'react';
 import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
-import helper from 'helpers';
-import { IProductItem } from 'interfaces';
 import LazyImage from 'components/Common/LazyImage';
+import Price from 'components/Common/Price';
+import DiscountTag from '../DiscountTag';
 let cx = classNames.bind(styles);
 
 export type ProductItemProps = {
   /**
    * props test
    * */
-  product: IProductItem;
   className?: string;
   type: string;
   /**
    * Simple click handler
    */
   onClick?: () => void;
+
+  img: string;
+  discount?: string;
+  finalPrice: number;
+  oldPrice?: number;
+  name: string;
+  sellerShippingInfo?: string;
 };
 
 const ProductItem: React.FC<ProductItemProps> = props => {
-  const { className, onClick, product, type = 'grid', ...rest } = props;
-  const { formatCurrency, getBestPrice, getDiscountPercent } = helper;
+  const {
+    className,
+    onClick,
+    type = 'grid',
+    img,
+    discount,
+    finalPrice,
+    oldPrice,
+    name,
+    sellerShippingInfo,
+    ...rest
+  } = props;
   return (
     <div
       onClick={() => onClick}
@@ -34,30 +50,18 @@ const ProductItem: React.FC<ProductItemProps> = props => {
       {...rest}
     >
       <div className={cx('product-image')}>
-        <LazyImage src={(product.images && product.images[0].url) || ''} />
+        <DiscountTag value={discount} theme={1}>
+          <LazyImage src={img || ''} />
+        </DiscountTag>
       </div>
       <div className={cx('product-content')}>
-        <div className={cx('name')}>
-          {product.displayName ? product.displayName : product.name}
-        </div>
-        {false && (
+        <div className={cx('name')}>{name}</div>
+        {sellerShippingInfo && (
           <div className={cx('shipping-info')}>
-            <span>Miễn phí giao hàng toàn quốc</span>
+            <span>{sellerShippingInfo}</span>
           </div>
         )}
-        <div className={cx('price')}>
-          <div className={cx('final-price')}>{getBestPrice(product)}</div>
-          <div>
-            <span className={cx('old-price')}>
-              {formatCurrency(product.price.supplierSalePrice)}
-            </span>
-            {!!getDiscountPercent(product) && (
-              <span className={cx('discount-tag')}>
-                -{getDiscountPercent(product)}%
-              </span>
-            )}
-          </div>
-        </div>
+        <Price finalPrice={finalPrice} oldPrice={oldPrice} />
       </div>
     </div>
   );

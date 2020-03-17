@@ -38,7 +38,13 @@ const BottomNavigationItem: React.FC<IBottomNavigationItem> = props => {
       style={{ color: active ? color : '' }}
       onClick={onClick}
     >
-      <Badge offsetX={10} offsetY={10} value={badgeValue} max={badgeMax}>
+      <Badge
+        color={color}
+        offsetX={10}
+        offsetY={10}
+        value={badgeValue}
+        max={badgeMax}
+      >
         {active ? navItem.activeIcon : navItem.inActiveIcon}
       </Badge>
       <span className={cx('label')}>{navItem.label}</span>

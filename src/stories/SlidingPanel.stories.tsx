@@ -4,7 +4,7 @@ import Button from 'components/Common/Button';
 import Appbar from 'components/Mobile/Appbar';
 
 export default {
-  title: 'SlidingPanel',
+  title: 'Mobile/SlidingPanel',
 };
 
 export const DefaultPanel = () => {

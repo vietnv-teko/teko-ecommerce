@@ -2,7 +2,7 @@ import * as React from 'react';
 import ProductItem from 'components/Common/ProductItem';
 
 export default {
-  title: 'ProductItem',
+  title: 'Common/ProductItem',
   component: ProductItem,
 };
 
@@ -23,5 +23,29 @@ const product = {
   ],
 };
 
-export const GridItem = () => <ProductItem type="grid" product={product} />;
-export const ListItem = () => <ProductItem type="list" product={product} />;
+export const GridItem = () => (
+  <div style={{ width: '400px' }}>
+    <ProductItem
+      type="grid"
+      img={product.images[0].url}
+      discount="5%"
+      name={product.name}
+      finalPrice={product.price.sellPrice}
+      oldPrice={product.price.supplierSalePrice}
+      sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+    />
+  </div>
+);
+export const ListItem = () => (
+  <div style={{ width: '400px' }}>
+    <ProductItem
+      type="list"
+      img={product.images[0].url}
+      discount="5%"
+      name={product.name}
+      finalPrice={product.price.sellPrice}
+      oldPrice={product.price.supplierSalePrice}
+      sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+    />
+  </div>
+);

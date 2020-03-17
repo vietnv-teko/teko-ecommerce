@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Checkbox from 'components/Common/Checkbox/Checkbox';
 
 export default {
-  title: 'Checkbox',
+  title: 'Common/Checkbox',
 };
 
 export const DefaultCheckbox = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'components/Common/TextField';
 
 export default {
-  title: 'TextField',
+  title: 'Common/TextField',
   component: TextField,
 };
 

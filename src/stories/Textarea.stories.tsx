@@ -3,7 +3,7 @@ import Textarea from 'components/Common/Textarea';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Textarea',
+  title: 'Common/Textarea',
   component: Textarea,
 };
 

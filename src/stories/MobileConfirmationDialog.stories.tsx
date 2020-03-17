@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ConfirmationDialog from 'components/Mobile/ConfirmationDialog';
 
 export default {
-  title: 'ConfirmationDialog',
+  title: 'Mobile/ConfirmationDialog',
   component: ConfirmationDialog,
 };
 

@@ -53,7 +53,7 @@ const ConfirmationDialog = (props: ConfirmationDialogProps) => {
       <DialogAction>
         <Button
           onClick={onCancel}
-          className="mr16 w100 p0"
+          className="mr16 w100 p0 radius-6"
           color="#eb1f3a"
           variant="outlined"
           size="small"
@@ -61,7 +61,7 @@ const ConfirmationDialog = (props: ConfirmationDialogProps) => {
           Đóng
         </Button>
         <Button
-          className="w100 p0"
+          className="w100 p0 radius-6"
           color="#eb1f3a"
           variant="contained"
           size="small"

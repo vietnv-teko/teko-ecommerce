@@ -5,7 +5,7 @@ import Divider from 'components/Common/Divider';
 import { action } from '@storybook/addon-actions';
 import ProductItem from 'components/Common/ProductItem';
 export default {
-  title: 'List',
+  title: 'Common/List',
   component: List,
 };
 
@@ -30,19 +30,51 @@ export const Default = () => {
     <div style={{ width: '300px' }}>
       <List>
         <ListItem onClick={action('Click A')}>
-          <ProductItem type="list" product={product} />
+          <ProductItem
+            type="list"
+            img={product.images[0].url}
+            discount="5%"
+            name={product.name}
+            finalPrice={product.price.sellPrice}
+            oldPrice={product.price.supplierSalePrice}
+            sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+          />
         </ListItem>
         <Divider />
         <ListItem onClick={action('Click A')}>
-          <ProductItem type="list" product={product} />
+          <ProductItem
+            type="list"
+            img={product.images[0].url}
+            discount="5%"
+            name={product.name}
+            finalPrice={product.price.sellPrice}
+            oldPrice={product.price.supplierSalePrice}
+            sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+          />
         </ListItem>
         <Divider />
         <ListItem onClick={action('Click A')}>
-          <ProductItem type="list" product={product} />
+          <ProductItem
+            type="list"
+            img={product.images[0].url}
+            discount="5%"
+            name={product.name}
+            finalPrice={product.price.sellPrice}
+            oldPrice={product.price.supplierSalePrice}
+            sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+          />
         </ListItem>
         <Divider />
         <ListItem onClick={action('Click A')}>
-          <ProductItem type="list" product={product} />
+          <ProductItem
+            type="list"
+            img={product.images[0].url}
+            discount="5%"
+            name={product.name}
+            finalPrice={product.price.sellPrice}
+            oldPrice={product.price.supplierSalePrice}
+            sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
+          />
         </ListItem>
       </List>
     </div>

@@ -4,7 +4,7 @@ import classname from 'classnames/bind';
 import styles from 'components/Common/Modal/Modal.module.css';
 let cx = classname.bind(styles);
 export default {
-  title: 'Modal',
+  title: 'Common/Modal',
   component: Modal,
 };
 

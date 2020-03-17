@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RadioButton from 'components/Common/RadioButton';
 export default {
-  title: 'RadioButton',
+  title: 'Common/RadioButton',
   component: RadioButton,
 };
 

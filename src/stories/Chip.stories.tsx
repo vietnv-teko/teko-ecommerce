@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 let cx = classname.bind(styles);
 export default {
-  title: 'Chip',
+  title: 'Common/Chip',
   component: Chip,
 };
 

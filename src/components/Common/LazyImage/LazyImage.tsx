@@ -62,7 +62,7 @@ const LazyImage = (props: LazyImageProps) => {
         }}
       ></div>
       {!imageLoaded && <div className={cx('placeholder')}></div>}
-      <div className={cx('content')}></div>
+      <div className={cx('content')} style={{ width: '1000px' }}></div>
     </div>
   );
 };
