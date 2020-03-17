@@ -1,78 +1,42 @@
-  /**
-  Default
-  **/
-  .page {
-    border-radius: 100%;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-  }
-  ul{
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-    font-size: .875em;
-    font-family: inherit;
-    line-height: 2em;
-  }
-  .page {
-    display: inline-block;
-    padding: 0px 1px;
-    margin: 0px 9px;
-    text-decoration: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    padding: 0;
-    margin: auto 5px;
-    text-align: center;
-    position: relative;
-    border: 2px solid #fff;
-  }
-  .is-active {
-    display: inline-block;
-    padding: 0px 1px;
-    margin: 0px 9px;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: #0C4CA3;
-    color: #fff;
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    margin: auto 5px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-  }
-  .pageElli {
-    display: inline-block;
-    padding: 0px 9px;
-    margin-right: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #717171;
-    
-  }
-  
-  .default span {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    padding: 0;
-    text-align: center;
-    margin: auto 5px;
-  }
-  
-  .default span.is-active {
-    border: 3px solid #2ecc71;
-    border-radius: 100%;
+
+ul.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+
+  .current-page {
+    font-size: 1.5rem;
+    vertical-align: middle;
   }
 
-  li.page.disabled {
-    cursor: default;
-    pointer-events: none;
-    color: #999999;
+  .page-item.active div.page-link {
+    color: #fff !important;
+    background-color: #0c4ca3 !important;
+    border-color: #0c4ca3 !important;
   }
+
+  div.page-link {
+    padding: 0.75rem 1rem;
+    min-width: 3.5rem;
+    text-align: center;
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+    color: #0c4ca3;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+
+  div.page-link:hover {
+    background-color: #f4f4f4;
+  }
+
+  .page-item {
+    display: inline-block;
+  }
+  
+  .pagination-nav-btn.disabled, .dot-item {
+    pointer-events: none;
+  }
+}
+

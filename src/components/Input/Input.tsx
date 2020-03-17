@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import styles from './TextField.module.scss';
+import styles from './Input.module.scss';
 import classNames from 'classnames/bind';
 
 let cs = classNames.bind(styles);

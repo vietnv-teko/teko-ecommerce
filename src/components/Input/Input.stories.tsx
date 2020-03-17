@@ -1,14 +1,14 @@
 import React from 'react';
-import TextField from './TextField';
-import Icon from './../Icon';
+import Input from './Input';
+import Icon from '../Icon';
 export default {
-  title: 'TextField',
-  component: TextField,
+  title: 'Input',
+  component: Input,
 };
 
 export const Default = () => (
   <div style={{ width: '50%' }}>
-    <TextField
+    <Input
       prefix={
         <Icon size={20} color="green">
           icon vns-Account-Active
@@ -22,7 +22,7 @@ export const Default = () => (
       placeHolder="User Name"
     />
     <div style={{ height: '10px' }}></div>
-    <TextField
+    <Input
       prefix={
         <Icon size={20} color="green">
           icon vns-Guarantee-Checked
