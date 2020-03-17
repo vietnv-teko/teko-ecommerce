@@ -2,7 +2,7 @@ import React from 'react';
 import Breadcrumb from 'components/Desktop/Breadcrumb';
 import Link from 'components/Common/Link';
 export default {
-  title: 'Breadcrumb',
+  title: 'Desktop/Breadcrumb',
   component: Breadcrumb,
 };
 

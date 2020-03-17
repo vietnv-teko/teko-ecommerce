@@ -2,7 +2,7 @@ import * as React from 'react';
 import ProductItem from 'components/Common/ProductItem';
 
 export default {
-  title: 'ProductItem',
+  title: 'Common/ProductItem',
   component: ProductItem,
 };
 

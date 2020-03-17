@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import Appbar from 'components/Mobile/Appbar';
 
 export default {
-  title: 'Appbar',
+  title: 'Mobile/Appbar',
 };
 
 export const AppbarWith2Icons = () => {

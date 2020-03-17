@@ -6,7 +6,7 @@ import classname from 'classnames/bind';
 import styles from 'components/Common/ExpansionPanel/ExpansionPanel.module.css';
 let cx = classname.bind(styles);
 export default {
-  title: 'ExpansionPanel',
+  title: 'Common/ExpansionPanel',
   component: ExpansionPanel,
 };
 

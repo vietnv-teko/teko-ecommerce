@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltips from 'components/Desktop/Tooltips';
 
 export default {
-  title: 'Tooltips',
+  title: 'Desktop/Tooltips',
   component: Tooltips,
 };
 

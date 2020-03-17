@@ -3,7 +3,7 @@ import Toast from 'components/Mobile/Toast';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Toast',
+  title: 'Mobile/Toast',
   component: Toast,
 };
 

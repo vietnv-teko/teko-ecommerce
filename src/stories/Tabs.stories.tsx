@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Tabs from 'components/Common/Tabs';
 
 export default {
-  title: 'Tabs',
+  title: 'Common/Tabs',
   component: Tabs,
 };
 

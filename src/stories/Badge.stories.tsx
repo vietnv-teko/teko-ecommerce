@@ -2,7 +2,7 @@ import React from 'react';
 import Badge from 'components/Common/Badge/Badge';
 
 export default {
-  title: 'Badge',
+  title: 'Common/Badge',
 };
 
 export const DefaultBadge = () => <Badge value={9}>Inbox</Badge>;

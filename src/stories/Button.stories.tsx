@@ -3,7 +3,7 @@ import Button from 'components/Common/Button/Button';
 import Icon from 'components/Common/Icon';
 
 export default {
-  title: 'Button',
+  title: 'Common/Button',
 };
 
 export const DefaultButton = () => <Button>Default Button</Button>;

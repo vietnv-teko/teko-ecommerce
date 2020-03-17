@@ -3,7 +3,7 @@ import BottomNavigation from 'components/Mobile/BottomNavigation';
 import BottomNavigationItem from 'components/Mobile/BottomNavigationItem';
 
 export default {
-  title: 'BottomNavigation',
+  title: 'Mobile/BottomNavigation',
 };
 
 let navItems = [

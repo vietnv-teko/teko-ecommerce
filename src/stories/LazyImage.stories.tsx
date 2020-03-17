@@ -2,7 +2,7 @@ import React from 'react';
 import LazyImage from 'components/Common/LazyImage';
 
 export default {
-  title: 'LazyImage',
+  title: 'Common/LazyImage',
   component: LazyImage,
 };
 

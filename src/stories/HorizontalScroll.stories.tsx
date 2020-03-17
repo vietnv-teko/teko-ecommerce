@@ -2,7 +2,7 @@ import React from 'react';
 import HorizontalScroll from 'components/Mobile/HorizontalScroll';
 import ProductItem from 'components/Common/ProductItem';
 export default {
-  title: 'HorizontalScroll',
+  title: 'Mobile/HorizontalScroll',
   component: HorizontalScroll,
 };
 

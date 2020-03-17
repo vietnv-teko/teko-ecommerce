@@ -5,7 +5,7 @@ import styles from 'components/Common/Divider/Divider.module.css';
 let cx = classname.bind(styles);
 
 export default {
-  title: 'Divider',
+  title: 'Common/Divider',
   component: Divider,
 };
 

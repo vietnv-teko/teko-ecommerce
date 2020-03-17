@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from 'components/Common/Grid/Grid';
 import ProductItem from 'components/Common/ProductItem';
 export default {
-  title: 'Grid',
+  title: 'Common/Grid',
   component: Grid,
 };
 

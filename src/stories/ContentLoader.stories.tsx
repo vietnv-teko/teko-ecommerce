@@ -2,7 +2,7 @@ import * as React from 'react';
 import ContentLoader from 'components/Common/ContentLoader/ContentLoader';
 
 export default {
-  title: 'ContentLoader',
+  title: 'Common/ContentLoader',
 };
 
 export const Default = () => <ContentLoader height={100} width={100} />;

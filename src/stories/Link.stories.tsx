@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'components/Common/Link';
 import { browserHistory } from 'components/Common/Link/constant';
 export default {
-  title: 'Link',
+  title: 'Common/Link',
   component: Link,
 };
 

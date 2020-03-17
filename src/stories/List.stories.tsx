@@ -5,7 +5,7 @@ import Divider from 'components/Common/Divider';
 import { action } from '@storybook/addon-actions';
 import ProductItem from 'components/Common/ProductItem';
 export default {
-  title: 'List',
+  title: 'Common/List',
   component: List,
 };
 
