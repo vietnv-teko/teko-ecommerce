@@ -24,6 +24,7 @@ let navItems = [
     activeIcon: <i className="icon vns-Shopping-cart-Active" />,
     inActiveIcon: <i className="icon vns-Shopping-cart" />,
     path: '/cart-home',
+    badgeValue: 12,
   },
   {
     label: 'Thông báo',
@@ -49,6 +50,7 @@ export const Default = () => {
           navItem={item}
           active={index === active}
           onClick={() => setActive(index)}
+          badgeValue={item.badgeValue}
         />
       ))}
     </BottomNavigation>
