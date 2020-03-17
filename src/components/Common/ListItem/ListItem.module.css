@@ -1,0 +1,11 @@
+.list-item {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}

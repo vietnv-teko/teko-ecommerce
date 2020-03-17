@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Pagination from '../components/Pagination/Pagination';
+import Pagination from '../components/Desktop/Pagination/Pagination';
 
 export default {
-  title: 'Pagination',
+  title: 'Desktop/Pagination',
   component: Pagination,
 };
 
