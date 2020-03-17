@@ -7,6 +7,6 @@ export default {
 
 export const Default = () => (
   <div style={{ width: '500px' }}>
-    <Swiper items={['hihi']} />
+    <Swiper>{['hihi', 'haha']}</Swiper>
   </div>
 );
