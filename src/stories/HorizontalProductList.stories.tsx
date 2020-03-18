@@ -3,8 +3,8 @@ import HorizontalProductList from 'components/Mobile/HorizontalProductList';
 import ProductItem from 'components/Common/ProductItem';
 
 export default {
-  title: "Mobile/HorizontalProductList"
-}
+  title: 'Mobile/HorizontalProductList',
+};
 
 const indents: any = [];
 

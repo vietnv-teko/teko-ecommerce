@@ -3,7 +3,7 @@ import styles from './ProductItem.module.scss';
 import classNames from 'classnames/bind';
 import LazyImage from 'components/Common/LazyImage';
 import Price from 'components/Common/Price';
-import DiscountTag from '../DiscountTag';
+import Tag from 'components/Common/Tag';
 let cx = classNames.bind(styles);
 
 export type ProductItemProps = {
@@ -49,10 +49,13 @@ const ProductItem: React.FC<ProductItemProps> = props => {
       )}
       {...rest}
     >
-      <div className={cx('product-image')}>
-        <DiscountTag value={discount} theme={1}>
-          <LazyImage width={200} src={img || ''} />
-        </DiscountTag>
+      <div className={cx('product-image', 'relative')}>
+        <Tag
+          className={cx('discount-tag')}
+          value={discount}
+          backgroundColor="#eb1f3a"
+        />
+        <LazyImage contain src={img || ''} />
       </div>
       <div className={cx('product-content')}>
         <div className={cx('name')}>{name}</div>
