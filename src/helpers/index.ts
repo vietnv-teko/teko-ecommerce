@@ -1,5 +1,5 @@
 import { IProductItem } from 'interfaces';
-
+import product from './product';
 const formatCurrency = (money: number | string) => {
   return money
     ? money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + 'đ'
@@ -32,3 +32,4 @@ export default {
   getBestPrice,
   getDiscountPercent,
 };
+export const productHelper = product;

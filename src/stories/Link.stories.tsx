@@ -7,12 +7,12 @@ export default {
 };
 
 export const Default = () => {
-  return <Link text="vnshop" href="https://vnshop.vn" color="red" />;
+  return <Link children="vnshop" href="https://vnshop.vn" color="red" />;
 };
 export const Hover = () => {
   return (
     <Link
-      text="vnshop"
+      children="vnshop"
       href="https://vnshop.vn"
       color="black"
       underline="hover"
@@ -22,7 +22,7 @@ export const Hover = () => {
 export const Underline = () => {
   return (
     <Link
-      text="vnshop"
+      children="vnshop"
       color="blue"
       underline="always"
       onClick={() => browserHistory.replace('/?path=/story/divider--default')}

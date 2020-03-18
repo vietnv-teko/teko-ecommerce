@@ -18,7 +18,7 @@ const product = {
       priority: 1,
       path: '',
       url:
-        'https://lh3.googleusercontent.com/apZl8ZCL6qhElaV_a2oM11GntPHaaOUXmXTtHFYfCgsEzBJnKnoFlv-rhF_VUhqWUgz8Q7rnNjpyoCt9syY',
+        'https://img.vnshop.vn/height/400/media/catalog_v2/media/86/98/1569643471.9482455_190901143.jpg',
     },
   ],
 };
