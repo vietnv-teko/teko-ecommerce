@@ -1,4 +1,4 @@
-.tek-input-wrapper {
+.input-wrapper {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -13,12 +13,30 @@
   border-radius: 2px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  .tek-input-prefix {
-    margin-right: 4px;
-    flex: none;
-  }
-  
+  padding-left: 30px;
 }
+
+.input-affix-wrapper {
+  position: relative;
+}
+
+.input-prefix {
+  margin-right: 4px;
+  flex: none;
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: 7px;
+}
+
+.input-suffix {
+  margin-right: 4px;
+  flex: none;
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  right: 0px;
+}
+
+
