@@ -32,6 +32,7 @@ const Button: React.FC<ButtonProps> = props => {
     round,
     flat,
     text,
+    ...rest
   } = props;
 
   const handleClick = (event: any) => {
@@ -72,6 +73,7 @@ const Button: React.FC<ButtonProps> = props => {
         { flat: flat || icon || text },
       )}
       style={style}
+      {...rest}
     >
       {children}
       <div className={cx('ripple_container')} />
