@@ -1,6 +1,6 @@
 {
   "name": "teko-ecommerce",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Teko design system and ecommerce utils function",
   "author": "vietnv-teko",
   "license": "MIT",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.10",
+    "@types/react-router-dom": "^5.1.3",
     "history": "^4.10.1",
     "node-sass": "^4.13.1"
   },

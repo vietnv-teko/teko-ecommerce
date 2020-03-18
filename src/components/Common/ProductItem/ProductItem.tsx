@@ -51,7 +51,7 @@ const ProductItem: React.FC<ProductItemProps> = props => {
     >
       <div className={cx('product-image')}>
         <DiscountTag value={discount} theme={1}>
-          <LazyImage src={img || ''} />
+          <LazyImage width={200} src={img || ''} />
         </DiscountTag>
       </div>
       <div className={cx('product-content')}>

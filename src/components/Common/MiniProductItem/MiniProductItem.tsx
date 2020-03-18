@@ -25,6 +25,7 @@ export type MiniProductItemProps = {
   bottom?: string;
   right?: string;
   height?: number;
+  width?: number;
 };
 
 const MiniProductItem = (props: MiniProductItemProps) => {
@@ -38,7 +39,8 @@ const MiniProductItem = (props: MiniProductItemProps) => {
     right,
     bottom,
     left,
-    height = 80,
+    width = 80,
+    height,
   } = props;
 
   return (
@@ -52,7 +54,7 @@ const MiniProductItem = (props: MiniProductItemProps) => {
         bottom={bottom}
         theme={2}
       >
-        <LazyImage src={img || ''} height={height} />
+        <LazyImage src={img || ''} width={width} height={height} />
       </DiscountTag>
       <Price finalPrice={price} className={cx('price')} />
     </div>
