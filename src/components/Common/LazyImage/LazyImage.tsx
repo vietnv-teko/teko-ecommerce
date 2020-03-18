@@ -26,12 +26,24 @@ export type LazyImageProps = {
    * */
   height?: number;
   /**
+   * Sets the height for the component.
+   * */
+  width?: number;
+  /**
    * Calculated as width/height, so for a 1920x1080px image this will be 1.7778. Will be calculated automatically if omitted
    * */
   aspectRatio?: number;
 };
 const LazyImage = (props: LazyImageProps) => {
-  const { src, onClick, className, contain, aspectRatio = 1, height } = props;
+  const {
+    src,
+    onClick,
+    className,
+    contain,
+    aspectRatio = 1,
+    height,
+    width,
+  } = props;
   const [imageLoaded, setImageLoaded] = useState(false);
   let objImg = new Image();
   objImg.src = src;
@@ -41,6 +53,7 @@ const LazyImage = (props: LazyImageProps) => {
   let style = cleanObject({
     paddingBottom: !height ? `${100 / aspectRatio}%` : '',
     height: height ? `${height}px` : '',
+    width: width ? `${width}px` : '',
   });
   useEffect(() => {
     setImageLoaded(false);
@@ -48,7 +61,7 @@ const LazyImage = (props: LazyImageProps) => {
   }, [window.location.href]);
   return (
     <div onClick={onClick} className={cx('image')}>
-      <div style={style} className={cx('sizer')}></div>
+      <div className={cx('sizer')}></div>
       <div
         className={cx(
           className,
@@ -62,7 +75,7 @@ const LazyImage = (props: LazyImageProps) => {
         }}
       ></div>
       {!imageLoaded && <div className={cx('placeholder')}></div>}
-      <div className={cx('content')}></div>
+      <div style={style} className={cx('content')}></div>
     </div>
   );
 };
