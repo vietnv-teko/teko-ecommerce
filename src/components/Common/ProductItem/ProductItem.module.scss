@@ -3,6 +3,7 @@
   margin: auto;
   cursor: pointer;
   background: #fff;
+  width: 100%;
   .image {
     position: relative;
     padding-top: 100%;
@@ -37,7 +38,6 @@
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 34px;
     font-size: 14px;
   }
   .shipping-info {
@@ -62,4 +62,8 @@
 
 .grid-view {
   max-width: 200px;
+}
+
+.mt5 {
+  margin-top: 5px;
 }

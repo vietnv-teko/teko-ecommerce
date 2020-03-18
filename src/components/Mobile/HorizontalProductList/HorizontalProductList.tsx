@@ -11,18 +11,24 @@ let cx = classNames.bind(styles);
 
 interface IHorizontalProductList {
   title?: string;
-  link?: string;
+  link?: any;
+  className?: string;
+  onClick?: () => void;
 }
 
 const HorizontalProductList: React.FC<IHorizontalProductList> = props => {
-  const { title, link, children } = props;
+  const { title, link, children, className, onClick } = props;
 
   return (
-    <div className={cx('horizontal-product-list')}>
+    <div className={cx('horizontal-product-list', className)}>
       <HeaderBlock>
         <div className={cx('bold')}>{title}</div>
         {link && (
-          <NewLink color="#848788" className={cx('flex-center')} to={link}>
+          <NewLink
+            color="#848788"
+            className={cx('flex-center')}
+            onClick={onClick}
+          >
             <span>Xem tất cả</span>
             <Icon color="#848788">icon vns-Forward</Icon>
           </NewLink>

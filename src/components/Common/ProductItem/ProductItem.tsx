@@ -16,7 +16,6 @@ export type ProductItemProps = {
    * Simple click handler
    */
   onClick?: () => void;
-
   img: string;
   discount?: string;
   finalPrice: number;
@@ -40,7 +39,7 @@ const ProductItem: React.FC<ProductItemProps> = props => {
   } = props;
   return (
     <div
-      onClick={() => onClick}
+      onClick={onClick}
       className={cx(
         'product-item',
         { 'list-view': type === 'list' },
@@ -64,7 +63,11 @@ const ProductItem: React.FC<ProductItemProps> = props => {
             <span>{sellerShippingInfo}</span>
           </div>
         )}
-        <Price finalPrice={finalPrice} oldPrice={oldPrice} />
+        <Price
+          className={cx('mt5')}
+          finalPrice={finalPrice}
+          oldPrice={oldPrice}
+        />
       </div>
     </div>
   );
