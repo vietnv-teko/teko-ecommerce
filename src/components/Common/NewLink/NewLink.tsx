@@ -1,10 +1,11 @@
 import React from 'react';
 import classname from 'classnames/bind';
-import styles from './Link.module.css';
+import styles from './NewLink.module.css';
+import { browserHistory } from 'helpers';
 
 let cx = classname.bind(styles);
 
-export type LinkProps = {
+export type NewLinkProps = {
   /**
    * Custom style of component
    * */
@@ -13,6 +14,10 @@ export type LinkProps = {
    * The URL of the page the link goes to
    * */
   href?: string;
+  /**
+   * The URL or Object to push history
+   * */
+  to?: any;
   /**
    *The color of the component
    */
@@ -26,15 +31,21 @@ export type LinkProps = {
    * */
   onClick?: () => void;
 };
-const Link: React.FC<LinkProps> = props => {
+const NewLink: React.FC<NewLinkProps> = props => {
   const {
     className,
     href,
+    to,
     underline = 'none',
     children,
     color = '#047fff',
     onClick,
   } = props;
+
+  const handleClick = () => {
+    if (onClick) onClick();
+    if (to) browserHistory.push(to);
+  };
 
   return (
     <a
@@ -47,11 +58,11 @@ const Link: React.FC<LinkProps> = props => {
         { noneUnderline: underline === 'none' },
       )}
       style={{ color: color }}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {children}
     </a>
   );
 };
 
-export default Link;
+export default NewLink;

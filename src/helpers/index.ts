@@ -1,3 +1,4 @@
+import { createBrowserHistory } from 'history';
 import { IProductItem } from 'interfaces';
 
 const formatCurrency = (money: number | string) => {
@@ -9,6 +10,8 @@ const formatCurrency = (money: number | string) => {
 const getBestPrice = (product: IProductItem) => {
   return formatCurrency(product.price.sellPrice);
 };
+
+export const browserHistory = createBrowserHistory();
 
 const getDiscountPercent = (product: IProductItem) => {
   let discount = 0;

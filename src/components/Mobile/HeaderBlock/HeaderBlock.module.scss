@@ -4,6 +4,9 @@
   height: 40px;
   align-items: center;
   padding: 0 16px;
+  div {
+    flex: 1;
+  }
   .title {
     font-weight: 500;
   }

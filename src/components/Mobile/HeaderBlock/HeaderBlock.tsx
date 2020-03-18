@@ -12,9 +12,17 @@ interface IHeaderBlock {
 const HeaderBlock: React.FC<IHeaderBlock> = props => {
   const { className, children, backgroundColor } = props;
 
-  return <div style={cleanObject({
-    backgroundColor: backgroundColor
-  })} className={cx('header-block', className)} > {children}</div >;
+  return (
+    <div
+      style={cleanObject({
+        backgroundColor: backgroundColor,
+      })}
+      className={cx('header-block', className)}
+    >
+      {' '}
+      {children}
+    </div>
+  );
 };
 
 export default HeaderBlock;

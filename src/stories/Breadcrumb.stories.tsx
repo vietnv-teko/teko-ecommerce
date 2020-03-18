@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumb from 'components/Desktop/Breadcrumb';
-import Link from 'components/Common/Link';
+import NewLink from 'components/Common/NewLink';
 export default {
   title: 'Desktop/Breadcrumb',
   component: Breadcrumb,
@@ -10,8 +10,12 @@ export const Default = () => {
   return (
     <>
       <Breadcrumb separator="/">
-        <Link href="#" text="Vnshop" color="#22a0ff" underline="hover" />
-        <Link href="#" color="#22a0ff" text="Đồ gia dụng" underline="hover" />
+        <NewLink to="#" color="#22a0ff" underline="hover">
+          Vnshop
+        </NewLink>
+        <NewLink to="#" color="#22a0ff" underline="hover">
+          Đồ gia dụng
+        </NewLink>
         <span>Nồi cơm điện Sunhouse</span>
       </Breadcrumb>
     </>

@@ -1,30 +1,28 @@
-import React from "react";
+import React from 'react';
 import styles from './CategoryItem.module.scss';
 import classNames from 'classnames/bind';
-import Link from "components/Common/Link";
-import LazyImage from "components/Common/LazyImage";
+import LazyImage from 'components/Common/LazyImage';
+import NewLink from 'components/Common/NewLink';
 
 let cx = classNames.bind(styles);
 
 interface ICategoryItem {
-  link: string,
-  icon: string,
-  name: string,
-  className?: string
+  icon: string;
+  name: string;
+  className?: string;
+  to?: any;
 }
 
 const CategoryItem: React.FC<ICategoryItem> = props => {
-  const { link, icon, name, className } = props;
+  const { icon, name, className, to } = props;
   return (
-    <div className={cx("category-item", className)}>
-      <Link href={link}>
-        <div className={cx("category-icon")}>
-          <LazyImage height={48} src={icon} contain />
-        </div>
-        <div className={cx("category-name")}>{name}</div>
-      </Link>
-    </div>
-  )
-}
+    <NewLink to={to} className={cx('category-item', className)}>
+      <div className={cx('category-icon')}>
+        <LazyImage width={48} height={48} src={icon} contain />
+      </div>
+      <div className={cx('category-name')}>{name}</div>
+    </NewLink>
+  );
+};
 
 export default CategoryItem;

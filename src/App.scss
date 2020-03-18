@@ -72,3 +72,15 @@ body {
 .p16 {
   padding: 16px;
 }
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-one-row {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
