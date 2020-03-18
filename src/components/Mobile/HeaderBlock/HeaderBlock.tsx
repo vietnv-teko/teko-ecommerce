@@ -19,7 +19,6 @@ const HeaderBlock: React.FC<IHeaderBlock> = props => {
       })}
       className={cx('header-block', className)}
     >
-      {' '}
       {children}
     </div>
   );
