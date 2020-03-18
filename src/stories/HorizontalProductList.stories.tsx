@@ -1,10 +1,12 @@
 import React from 'react';
+import HorizontalProductList from 'components/Mobile/HorizontalProductList';
 import ProductItem from 'components/Common/ProductItem';
 
 export default {
-  title: 'Common/ProductItem',
-  component: ProductItem,
-};
+  title: "Mobile/HorizontalProductList"
+}
+
+const indents: any = [];
 
 const product = {
   sku: '123',
@@ -23,8 +25,8 @@ const product = {
   ],
 };
 
-export const GridItem = () => (
-  <div style={{ width: '400px' }}>
+for (let i = 0; i < 10; i++) {
+  indents.push(
     <ProductItem
       type="grid"
       img={product.images[0].url}
@@ -32,20 +34,15 @@ export const GridItem = () => (
       name={product.name}
       finalPrice={product.price.sellPrice}
       oldPrice={product.price.supplierSalePrice}
-      sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
-    />
-  </div>
-);
-export const ListItem = () => (
-  <div style={{ width: '400px' }}>
-    <ProductItem
-      type="list"
-      img={product.images[0].url}
-      discount="5%"
-      name={product.name}
-      finalPrice={product.price.sellPrice}
-      oldPrice={product.price.supplierSalePrice}
-      sellerShippingInfo="Miễn phí vận chuyển toàn quốc"
-    />
+      sellerShippingInfo="Miễn phí vận chuyển"
+    />,
+  );
+}
+
+export const Default = () => (
+  <div style={{ width: '375px' }}>
+    <HorizontalProductList title="Sản phẩm vừa xem" link="/">
+      {indents}
+    </HorizontalProductList>
   </div>
 );

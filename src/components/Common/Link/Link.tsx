@@ -22,16 +22,19 @@ export type LinkProps = {
    */
   underline?: string;
   /**
-   *  The content want to display on link
-   */
-  text: string;
-  /**
    * Callback fired when click component
    * */
   onClick?: () => void;
 };
-const Link = (props: LinkProps) => {
-  const { className, href, underline = 'none', text, color, onClick } = props;
+const Link: React.FC<LinkProps> = props => {
+  const {
+    className,
+    href,
+    underline = 'none',
+    children,
+    color = '#047fff',
+    onClick,
+  } = props;
 
   return (
     <a
@@ -46,7 +49,7 @@ const Link = (props: LinkProps) => {
       style={{ color: color }}
       onClick={onClick}
     >
-      {text}
+      {children}
     </a>
   );
 };
