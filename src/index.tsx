@@ -22,7 +22,6 @@ export { default as Appbar } from './components/Mobile/Appbar';
 export { default as BottomNavigation } from './components/Mobile/BottomNavigation';
 export { default as BottomNavigationItem } from './components/Mobile/BottomNavigationItem';
 export { default as CategoryItem } from './components/Mobile/CategoryItem';
-export { default as CategoryList } from './components/Mobile/CategoryList';
 export { default as ConfirmationDialog } from './components/Mobile/ConfirmationDialog';
 export { default as HeaderBlock } from './components/Mobile/HeaderBlock';
 export { default as HorizontalProductList } from './components/Mobile/HorizontalProductList';
