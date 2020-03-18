@@ -2,6 +2,7 @@
   padding: 10px;
   margin: auto;
   cursor: pointer;
+  background: #fff;
   .image {
     position: relative;
     padding-top: 100%;
@@ -16,6 +17,12 @@
       object-fit: contain;
       border-radius: 5px;
     }
+  }
+  .discount-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
   }
   .status {
     position: absolute;
@@ -37,6 +44,7 @@
     color: #53c305;
     font-size: 10px;
     height: 20px;
+    line-height: 20px;
   }
 }
 

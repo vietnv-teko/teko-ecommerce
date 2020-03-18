@@ -4,7 +4,7 @@ export { default as Button } from './components/Common/Button';
 export { default as Checkbox } from './components/Common/Checkbox';
 export { default as Chip } from './components/Common/Chip';
 export { default as ContentLoader } from './components/Common/ContentLoader';
-export { default as DiscountTag } from './components/Common/DiscountTag';
+export { default as Tag } from './components/Common/Tag';
 export { default as Divider } from './components/Common/Divider';
 export { default as Grid } from './components/Common/Grid';
 export { default as Icon } from './components/Common/Icon';
