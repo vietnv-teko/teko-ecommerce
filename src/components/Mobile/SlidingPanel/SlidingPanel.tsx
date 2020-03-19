@@ -47,26 +47,17 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
     // eslint-disable-next-line
   }, [open]);
 
-  const handleClick = (event: any) => {
-    event.preventDefault();
-    event.stopPropagation();
-    let body = document.querySelector('body');
+  useEffect(() => {
+    const element = document.querySelector('[data-open=true]');
+    const body = document.querySelector('body');
     if (body) {
-      body.style.overflow = 'auto';
+      body.style.overflow = element ? 'hidden' : '';
     }
-    onClose();
-  };
-
-  if (open) {
-    let body = document.querySelector('body');
-    if (body) {
-      body.style.overflow = 'hidden';
-    }
-  }
+  });
 
   return (
-    <div className={cx('sliding_panel', 'bottom', { open })}>
-      {open && <div className={cx('overlay')} onClick={handleClick} />}
+    <div className={cx('sliding_panel', 'bottom', { open })} data-open={open}>
+      {open && <div className={cx('overlay')} onClick={onClose} />}
       <div className={cx('content', { open })} ref={contentRef}>
         {children}
       </div>
