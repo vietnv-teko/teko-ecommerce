@@ -12,12 +12,12 @@ interface ISlidingPanel {
 }
 
 const SlidingPanel: React.FC<ISlidingPanel> = ({
-  open,
-  onClose,
-  maxHeight = 100,
-  minHeight = 0,
-  children,
-}) => {
+                                                 open,
+                                                 onClose,
+                                                 maxHeight = 100,
+                                                 minHeight = 0,
+                                                 children,
+                                               }) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,14 +33,8 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
         if (topPos < minHeight) topPos = minHeight;
         if (topPos > maxHeight) topPos = maxHeight;
         content.style.top = `${100 - topPos}%`;
-        setTimeout(() => {
-          let content = contentRef.current;
-          if (content) {
-            content.style.overflowY = 'auto';
-          }
-        }, 400);
       } else {
-        content.style.top = `${'105%'}`;
+        content.style.top = `${'100%'}`;
         content.style.overflowY = 'hidden';
       }
     }
