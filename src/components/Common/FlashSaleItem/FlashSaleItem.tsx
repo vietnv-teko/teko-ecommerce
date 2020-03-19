@@ -1,7 +1,7 @@
 import React from 'react';
 import classname from 'classnames/bind';
 import styles from './FlashSaleItem.module.scss';
-import MiniProductItem from '../MiniProductItem';
+import MiniProductItem from '../../Mobile/MiniProductItem';
 import { productHelper } from 'helpers';
 
 let cx = classname.bind(styles);

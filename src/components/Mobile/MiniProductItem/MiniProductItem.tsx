@@ -1,9 +1,9 @@
 import React from 'react';
-import LazyImage from '../LazyImage';
-import Price from '../Price';
+import LazyImage from '../../Common/LazyImage';
+import Price from '../../Common/Price';
 import classname from 'classnames/bind';
 import styles from './MiniProductItem.module.scss';
-import DiscountTag from '../DiscountTag';
+import DiscountTag from '../../Common/DiscountTag';
 
 let cx = classname.bind(styles);
 
@@ -19,7 +19,7 @@ export type MiniProductItemProps = {
 
   img: string;
   discount?: string;
-  price: number;
+  price?: number;
   top?: string;
   left?: string;
   bottom?: string;
@@ -56,7 +56,7 @@ const MiniProductItem = (props: MiniProductItemProps) => {
       >
         <LazyImage src={img || ''} width={width} height={height} />
       </DiscountTag>
-      <Price finalPrice={price} className={cx('price')} />
+      {price && <Price finalPrice={price} className={cx('price')} />}
     </div>
   );
 };

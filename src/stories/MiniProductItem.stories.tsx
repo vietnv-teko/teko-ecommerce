@@ -1,7 +1,7 @@
 import React from 'react';
-import MiniProductItem from 'components/Common/MiniProductItem';
+import MiniProductItem from 'components/Mobile/MiniProductItem';
 export default {
-  title: 'Common/MiniProductItem',
+  title: 'Mobile/MiniProductItem',
   component: MiniProductItem,
 };
 const product = {
