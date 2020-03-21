@@ -1,0 +1,19 @@
+.btnScrollTop {
+  position: fixed;
+  backface-visibility: hidden;
+  bottom: 88px;
+  right: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.08);
+  text-align: center;
+  line-height: 40px;
+  padding-top: 3px;
+  display: none;
+  &.active {
+    display: block;
+  }
+}
