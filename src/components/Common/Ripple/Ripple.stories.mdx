@@ -1,12 +1,11 @@
-import React from 'react';
 import Ripple from '.';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
-export default {
-  title: 'Ripple',
-};
+<Meta title="Ripple" component={Ripple} />
 
-export const Default = () => {
-  return (
+# Ripple 
+<Preview>
+  <Story name="Ripple">
     <div
       style={{
         height: '100px',
@@ -17,5 +16,7 @@ export const Default = () => {
     >
       click <Ripple />
     </div>
-  );
-};
+  </Story>
+</Preview>
+
+
