@@ -5,6 +5,8 @@ import LazyImage from 'components/Common/LazyImage';
 import Price from 'components/Common/Price';
 import Tag from 'components/Common/Tag';
 import Icon from '../Icon';
+
+const giftImage = require('../../../assets/images/giftColor.png');
 let cx = classNames.bind(styles);
 
 export type ProductItemProps = {
@@ -61,7 +63,12 @@ const ProductItem: React.FC<ProductItemProps> = props => {
             backgroundColor="#eb1f3a"
           />
         )}
-        {hasGift && <span className={cx('gift')}></span>}
+        {hasGift && (
+          <span
+            style={{ backgroundImage: `url('${giftImage}')` }}
+            className={cx('gift')}
+          ></span>
+        )}
         <LazyImage border={borderImage} contain src={img || ''} />
       </div>
       <div className={cx('product-content')}>

@@ -13,12 +13,11 @@ const getBestPrice = (product: IProductItem) => {
 
 export const browserHistory = createBrowserHistory();
 
-const getDiscountPercent = (product: IProductItem) => {
+const getDiscountPercent = (finalPrice: number, oldPrice: number) => {
   let discount = 0;
-  let supplierSalePrice = product.price.supplierSalePrice;
-  let sellPrice = product.price.sellPrice;
-  if (sellPrice && supplierSalePrice)
-    discount = 100 - Math.round((sellPrice * 100) / supplierSalePrice);
+  if (finalPrice && oldPrice) {
+    discount = 100 - Math.round((finalPrice * 100) / oldPrice);
+  }
   return discount;
 };
 
