@@ -33,7 +33,7 @@ export type RippleProps = {
 };
 
 const Ripple = (props: RippleProps) => {
-  const { duration = 850, color = 'rgba(255,255,255,0.6)' } = props;
+  const { duration = 600, color = 'rgba(255,255,255,0.6)' } = props;
   const [rippleArray, setRippleArray] = useState<any>([]);
 
   useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
