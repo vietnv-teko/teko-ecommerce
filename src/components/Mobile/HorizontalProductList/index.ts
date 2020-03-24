@@ -1,1 +1,1 @@
-export { default } from "./HorizontalProductList"
+export { default } from './HorizontalProductList';

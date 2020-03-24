@@ -5,18 +5,30 @@ import LazyImage from 'components/Common/LazyImage';
 
 let cx = classNames.bind(styles);
 
-interface ICategoryItem {
+type ICategoryItem = {
   icon: string;
   name: string;
   className?: string;
   to?: any;
   onClick?: () => void;
-}
+  trackContentName?: string;
+  index?: number;
+  catId?: number;
+  style?: any;
+};
 
-const CategoryItem: React.FC<ICategoryItem> = props => {
-  const { icon, name, className, onClick } = props;
+const CategoryItem = ({
+  icon,
+  name,
+  className,
+  onClick,
+  trackContentName,
+  index,
+  catId,
+  ...rest
+}: ICategoryItem) => {
   return (
-    <div onClick={onClick} className={cx('category-item', className)}>
+    <div onClick={onClick} className={cx('category-item', className)} {...rest}>
       <div className={cx('category-icon')}>
         <LazyImage width={48} height={48} src={icon} contain />
       </div>

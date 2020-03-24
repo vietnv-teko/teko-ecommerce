@@ -20,17 +20,20 @@ const Appbar: React.FC<IAppbar> = ({
   className,
 }) => {
   return (
-    <div
-      className={cx({
-        appbar: true,
-        [position]: true,
-        className,
-      })}
-    >
-      <div className={cx('start')}>{startIcon}</div>
-      <div className={cx('middle')}>{middle}</div>
-      <div className={cx('end')}>{endIcon}</div>
-    </div>
+    <>
+      <div
+        className={cx({
+          appbar: true,
+          [position]: true,
+          className,
+        })}
+      >
+        <div className={cx('start')}>{startIcon}</div>
+        <div className={cx('middle')}>{middle}</div>
+        <div className={cx('end')}>{endIcon}</div>
+      </div>
+      {position === 'fixed' && <div className={cx('top-wrapper')}></div>}
+    </>
   );
 };
 

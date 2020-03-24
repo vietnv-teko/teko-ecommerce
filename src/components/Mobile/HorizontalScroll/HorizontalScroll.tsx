@@ -15,8 +15,9 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = props => {
   return (
     <div className={cx('horizontal-scroll', className)}>
       {Array.isArray(children) &&
-        children.map(item => (
+        children.map((item: any, index: number) => (
           <div
+            key={index}
             style={{
               width: `${100 / slidesPerView}%`,
               flexShrink: 0,

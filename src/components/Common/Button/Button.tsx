@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
 
-interface ButtonProps {
+export type ButtonProps = {
   className?: string;
-  onClick?: () => void;
+  onClick?: (event: React.SyntheticEvent) => void;
   size?: string;
   color?: string;
   rippleColor?: string;
@@ -16,10 +16,15 @@ interface ButtonProps {
   round?: boolean;
   flat?: boolean;
   text?: boolean;
-}
+  disabled?: boolean;
+  style?: Object;
+  children: string | React.ReactNode;
+};
+
+let time = 0;
 
 const Button: React.FC<ButtonProps> = props => {
-  let {
+  const {
     children,
     className,
     onClick,
@@ -32,12 +37,15 @@ const Button: React.FC<ButtonProps> = props => {
     round,
     flat,
     text,
+    style: styleProps,
+    disabled = false,
     ...rest
   } = props;
 
   const handleClick = (event: any) => {
-    let button = event.target.parentElement;
-    let buttonPos = button.getBoundingClientRect();
+    event.stopPropagation();
+    const button = event.target.parentElement;
+    const buttonPos = button.getBoundingClientRect();
 
     const left = event.clientX - buttonPos.left;
     const top = event.clientY - buttonPos.top;
@@ -51,18 +59,26 @@ const Button: React.FC<ButtonProps> = props => {
     let rippleContainer = button.querySelector(`.${cx('ripple_container')}`);
     rippleContainer.appendChild(node);
 
+    const currentTime = new Date().getTime();
     setTimeout(() => {
       rippleContainer.removeChild(node);
-    }, 600);
+    }, 400);
 
-    if (onClick) onClick();
+    if (onClick)
+      setTimeout(() => {
+        if (currentTime - time > 200) {
+          time = currentTime;
+          onClick(event);
+        }
+      }, 200);
   };
 
-  let style = variant === 'contained' ? { backgroundColor: color } : { color };
+  const style = variant === 'contained' ? { background: color } : { color };
 
   return (
     <button
       onClick={handleClick}
+      disabled={disabled}
       className={cx(
         'button',
         size,
@@ -72,7 +88,7 @@ const Button: React.FC<ButtonProps> = props => {
         { round: round || icon },
         { flat: flat || icon || text },
       )}
-      style={style}
+      style={{ ...(!disabled && { ...style, ...styleProps }) }}
       {...rest}
     >
       {children}

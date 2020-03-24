@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import LazyImage from 'components/Common/LazyImage';
 import Price from 'components/Common/Price';
 import Tag from 'components/Common/Tag';
+import Icon from '../Icon';
 let cx = classNames.bind(styles);
 
 export type ProductItemProps = {
@@ -22,6 +23,8 @@ export type ProductItemProps = {
   oldPrice?: number;
   name: string;
   sellerShippingInfo?: string;
+  hasGift: boolean;
+  borderImage?: boolean;
 };
 
 const ProductItem: React.FC<ProductItemProps> = props => {
@@ -35,6 +38,8 @@ const ProductItem: React.FC<ProductItemProps> = props => {
     oldPrice,
     name,
     sellerShippingInfo,
+    hasGift,
+    borderImage,
     ...rest
   } = props;
   return (
@@ -49,21 +54,28 @@ const ProductItem: React.FC<ProductItemProps> = props => {
       {...rest}
     >
       <div className={cx('product-image', 'relative')}>
-        <Tag
-          className={cx('discount-tag')}
-          value={discount}
-          backgroundColor="#eb1f3a"
-        />
-        <LazyImage contain src={img || ''} />
+        {discount && type === 'grid' && (
+          <Tag
+            className={cx('discount-tag')}
+            value={discount}
+            backgroundColor="#eb1f3a"
+          />
+        )}
+        {hasGift && <span className={cx('gift')}></span>}
+        <LazyImage border={borderImage} contain src={img || ''} />
       </div>
       <div className={cx('product-content')}>
         <div className={cx('name')}>{name}</div>
         {sellerShippingInfo && (
           <div className={cx('shipping-info')}>
+            <Icon className={cx('mr5')} color="#53c305">
+              icon vns-Freeshipping ShippingInfo
+            </Icon>
             <span>{sellerShippingInfo}</span>
           </div>
         )}
         <Price
+          showDiscount={type === 'list'}
           className={cx('mt5')}
           finalPrice={finalPrice}
           oldPrice={oldPrice}

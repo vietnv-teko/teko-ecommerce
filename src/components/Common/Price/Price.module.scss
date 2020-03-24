@@ -2,11 +2,18 @@
   .final-price {
     font-weight: 700;
     font-size: 16px;
+    color: #333;
   }
   .old-price {
     text-decoration: line-through;
     color: #848788;
     font-weight: 400;
     font-size: 12px;
+  }
+  .discount {
+    font-size: 12px;
+    padding-left: 8px;
+    color: #eb1f3a;
+    font-weight: 400;
   }
 }

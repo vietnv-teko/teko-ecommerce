@@ -1,8 +1,10 @@
 .chip {
-  display: flex;
+  display: inline-flex;
+  margin: 4px;
   font-size: 14px;
-  line-height: 20px;
-  border-radius: 17px;
+  line-height: 29px;
+  height: 30px;
+  border-radius: 999px;
   width: fit-content;
   text-align: center;
   background: #e0e0e0;
@@ -10,20 +12,14 @@
   justify-content: center;
   text-decoration: none;
   outline: 0;
-  padding: 0;
   white-space: nowrap;
   border: none;
-  padding: 6px 0;
-  font-family: Roboto, sans-serif;
+  padding: 0 12px;
   cursor: pointer;
 }
 .outlined {
   border: 0.5px solid #e0e0e0 !important;
   font-weight: 400;
-}
-.label {
-  padding-left: 12px;
-  padding-right: 12px;
 }
 .btn-delete {
   height: 21px;

@@ -20,7 +20,7 @@ const Tag: React.FC<ITag> = props => {
       })}
       className={cx('tag', className)}
     >
-      {`-${value}`}
+      {`${value}`}
     </span>
   );
 };
