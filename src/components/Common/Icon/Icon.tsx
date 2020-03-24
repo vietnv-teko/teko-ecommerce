@@ -9,7 +9,7 @@ type IconProps = {
   className?: string; //icon class
 };
 const Icon: React.FC<IconProps> = props => {
-  const { size = 14, color = 'black', className, children, ...rest } = props;
+  const { size = 14, color = '#848788', className, children, ...rest } = props;
   return (
     <i
       className={cx(className, children)}

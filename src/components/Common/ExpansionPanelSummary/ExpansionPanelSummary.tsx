@@ -21,19 +21,21 @@ const ExpansionPanelSummary = (props: ExpansionPanelDetailProps) => {
     if (_event.currentTarget) {
       if (!open) {
         setOpen(true);
-        _event.currentTarget.nextElementSibling?.setAttribute(
-          'style',
-          'visibility:visible; margin: 20px 0; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; height: auto;',
-        );
+        _event.currentTarget.nextElementSibling &&
+          _event.currentTarget.nextElementSibling.setAttribute(
+            'style',
+            'visibility:visible; margin: 20px 0; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; height: auto;',
+          );
         _event.currentTarget
           .getElementsByTagName('i')[0]
           .setAttribute('style', 'transform: rotate(180deg);');
       } else {
         setOpen(false);
-        _event.currentTarget.nextElementSibling?.setAttribute(
-          'style',
-          'visibility:hidden; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;  height: 0;',
-        );
+        _event.currentTarget.nextElementSibling &&
+          _event.currentTarget.nextElementSibling.setAttribute(
+            'style',
+            'visibility:hidden; transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;  height: 0;',
+          );
         _event.currentTarget
           .getElementsByTagName('i')[0]
           .setAttribute('style', 'transform: rotate(0deg);');

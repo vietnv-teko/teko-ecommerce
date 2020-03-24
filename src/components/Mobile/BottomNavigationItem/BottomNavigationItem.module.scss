@@ -26,10 +26,19 @@
   &.hide-label {
     .label {
       position: absolute;
-      bottom: -25%;
+      bottom: -9%;
       opacity: 0;
       visibility: hidden;
       font-size: 6px;
+    }
+  }
+  &.active {
+    transform: translateY(-8px);
+    .label {
+      opacity: 1;
+      visibility: initial;
+      font-size: 13px;
+      line-height: 1.6;
     }
   }
 }

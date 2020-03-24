@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import styles from './TextField.module.scss';
 import classNames from 'classnames/bind';
 
-let cs = classNames.bind(styles);
+let cx = classNames.bind(styles);
 type TFProps = {
   disabled?: boolean; //Whether the input is disabled.
   maxLength?: number; //max length
@@ -34,7 +34,7 @@ export default ({
     <div>
       {prefix && <span className="tek-input-prefix">{prefix}</span>}
       <input
-        className={cs('tek-input-wrapper')}
+        className={cx('tek-input-wrapper')}
         {...rest}
         maxLength={maxLength || 524288}
         type={`${type || 'string'}`}

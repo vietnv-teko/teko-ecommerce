@@ -2,26 +2,38 @@ import React from 'react';
 import styles from './CategoryItem.module.scss';
 import classNames from 'classnames/bind';
 import LazyImage from 'components/Common/LazyImage';
-import NewLink from 'components/Common/NewLink';
 
 let cx = classNames.bind(styles);
 
-interface ICategoryItem {
+type ICategoryItem = {
   icon: string;
   name: string;
   className?: string;
   to?: any;
-}
+  onClick?: () => void;
+  trackContentName?: string;
+  index?: number;
+  catId?: number;
+  style?: any;
+};
 
-const CategoryItem: React.FC<ICategoryItem> = props => {
-  const { icon, name, className, to } = props;
+const CategoryItem = ({
+  icon,
+  name,
+  className,
+  onClick,
+  trackContentName,
+  index,
+  catId,
+  ...rest
+}: ICategoryItem) => {
   return (
-    <NewLink to={to} className={cx('category-item', className)}>
+    <div onClick={onClick} className={cx('category-item', className)} {...rest}>
       <div className={cx('category-icon')}>
         <LazyImage width={48} height={48} src={icon} contain />
       </div>
       <div className={cx('category-name')}>{name}</div>
-    </NewLink>
+    </div>
   );
 };
 

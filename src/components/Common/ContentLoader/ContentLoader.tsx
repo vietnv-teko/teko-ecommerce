@@ -6,8 +6,8 @@ import { cleanObject } from 'helpers';
 let cx = classNames.bind(styles);
 
 interface ContentLoaderProps {
-  height?: number;
-  width?: number;
+  height?: string;
+  width?: string;
   mt?: number;
   mb?: number;
   mr?: number;
@@ -15,13 +15,15 @@ interface ContentLoaderProps {
 }
 
 const ContentLoader: React.FC<ContentLoaderProps> = props => {
-  const { width, height, mt, mb, mr, ml } = props;
+  const { width = '100%', height, mt, mb, mr, ml } = props;
   return (
     <div
       className={cx('content-loader')}
       style={cleanObject({
-        height: `${height}px` || '',
-        width: `${width}px` || '',
+        position: 'relative',
+        maxWidth: '100%',
+        paddingTop: `${height}` || '',
+        width: `${width}` || '',
         marginTop: `${mt}px` || '',
         marginBottom: `${mb}px` || '',
         marginRight: `${mr}px` || '',

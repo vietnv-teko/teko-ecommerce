@@ -1,0 +1,17 @@
+.bottom-action-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: 60px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, 0.6);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-backface-visibility: hidden;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

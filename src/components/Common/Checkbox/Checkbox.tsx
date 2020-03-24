@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Checkbox.module.scss';
 
@@ -6,7 +6,7 @@ let cx = classNames.bind(styles);
 
 interface ICheckBox {
   checked: boolean;
-  onChange: any;
+  onChange?: (checked: boolean) => void;
   color?: string;
   label?: string;
   size?: number;
@@ -14,25 +14,31 @@ interface ICheckBox {
 }
 
 const CheckBox: React.FC<ICheckBox> = ({
-  checked,
+  checked: defaultChecked,
   onChange,
   color = '#1669a8',
   size,
   label,
   className,
 }) => {
+  const [checked, setChecked] = useState(defaultChecked || false);
+  const toggleActive = () => {
+    setChecked(checked => !checked);
+    if (onChange) onChange(!checked);
+  };
   return (
     <label className={cx('checkbox', size, className)}>
-      <input type="checkbox" checked={checked} onChange={onChange} />
       {checked ? (
         <i
           className={cx('icon', 'vns-Checkbox')}
           style={{ color, fontSize: `${size}px` }}
+          onClick={toggleActive}
         />
       ) : (
         <i
           className={cx('icon', 'vns-Checkbox-empty')}
           style={{ fontSize: `${size}px` }}
+          onClick={toggleActive}
         />
       )}
       <span className={cx('label')}>{label}</span>

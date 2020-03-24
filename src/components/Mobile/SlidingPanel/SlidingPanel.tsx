@@ -20,7 +20,7 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  const setContentPosition = () => {
     let content = contentRef.current;
     if (content) {
       if (open) {
@@ -33,40 +33,34 @@ const SlidingPanel: React.FC<ISlidingPanel> = ({
         if (topPos < minHeight) topPos = minHeight;
         if (topPos > maxHeight) topPos = maxHeight;
         content.style.top = `${100 - topPos}%`;
-        setTimeout(() => {
-          let content = contentRef.current;
-          if (content) {
-            content.style.overflowY = 'auto';
-          }
-        }, 400);
       } else {
-        content.style.top = `${'105%'}`;
+        content.style.top = `${'100%'}`;
         content.style.overflowY = 'hidden';
       }
     }
+  };
+
+  useEffect(() => {
+    if (window) window.addEventListener('resize', setContentPosition);
+    return () => window.removeEventListener('resize', setContentPosition);
+  });
+
+  useEffect(() => {
+    setContentPosition();
     // eslint-disable-next-line
   }, [open]);
 
-  const handleClick = (event: any) => {
-    event.preventDefault();
-    event.stopPropagation();
-    let body = document.querySelector('body');
+  useEffect(() => {
+    const element = document.querySelector('[data-open=true]');
+    const body = document.querySelector('body');
     if (body) {
-      body.style.overflow = 'auto';
+      body.style.overflow = element ? 'hidden' : '';
     }
-    onClose();
-  };
-
-  if (open) {
-    let body = document.querySelector('body');
-    if (body) {
-      body.style.overflow = 'hidden';
-    }
-  }
+  });
 
   return (
-    <div className={cx('sliding_panel', 'bottom', { open })}>
-      {open && <div className={cx('overlay')} onClick={handleClick} />}
+    <div className={cx('sliding_panel', 'bottom', { open })} data-open={open}>
+      {open && <div className={cx('overlay')} onClick={onClose} />}
       <div className={cx('content', { open })} ref={contentRef}>
         {children}
       </div>

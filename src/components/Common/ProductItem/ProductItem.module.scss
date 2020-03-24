@@ -3,6 +3,19 @@
   margin: auto;
   cursor: pointer;
   background: #fff;
+  width: 100%;
+  height: 100%;
+  .gift {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 24px;
+    height: 24px;
+    background: url('../../../images/img/giftColor.png') no-repeat center;
+    background-size: contain;
+    display: block;
+    z-index: 10;
+  }
   .image {
     position: relative;
     padding-top: 100%;
@@ -30,14 +43,13 @@
     left: 0;
   }
   .name {
+    margin-top: 8px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    margin-top: 8px;
     word-break: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 34px;
     font-size: 14px;
   }
   .shipping-info {
@@ -45,6 +57,12 @@
     font-size: 10px;
     height: 20px;
     line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './BottomNavigationItem.module.scss';
 import classNames from 'classnames/bind';
 import Badge from 'components/Common/Badge';
+import Icon from 'components/Common/Icon';
 
 let cx = classNames.bind(styles);
 
@@ -45,7 +46,15 @@ const BottomNavigationItem: React.FC<IBottomNavigationItem> = props => {
         value={badgeValue}
         max={badgeMax}
       >
-        {active ? navItem.activeIcon : navItem.inActiveIcon}
+        {active ? (
+          <Icon size={24} color={color} className={cx('icon')}>
+            {navItem.activeIcon}
+          </Icon>
+        ) : (
+          <Icon size={24} className={cx('icon')}>
+            {navItem.inActiveIcon}
+          </Icon>
+        )}
       </Badge>
       <span className={cx('label')}>{navItem.label}</span>
     </div>

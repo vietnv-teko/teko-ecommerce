@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './LazyImage.module.scss';
 import classNames from 'classnames/bind';
 import { cleanObject } from 'helpers';
@@ -33,6 +33,7 @@ export type LazyImageProps = {
    * Calculated as width/height, so for a 1920x1080px image this will be 1.7778. Will be calculated automatically if omitted
    * */
   aspectRatio?: number;
+  border?: boolean;
 };
 const LazyImage = (props: LazyImageProps) => {
   const {
@@ -43,39 +44,35 @@ const LazyImage = (props: LazyImageProps) => {
     aspectRatio = 1,
     height,
     width,
+    border,
   } = props;
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageUrl, setImageUrl] = useState(src);
+  const placeHolder =
+    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGZpbGw9IiNGNkY2RjYiIGQ9Ik0wIDBoMjYwdjI2MEgweiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMDQgMTA0aDU0djU0aC01NHoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjQjRCNEI0IiBkPSJNMTUxLjI1IDEwNi4yNWE0LjUgNC41IDAgMCAxIDQuNSA0LjV2NDAuNWE0LjUgNC41IDAgMCAxLTQuNSA0LjVoLTQwLjVhNC41IDQuNSAwIDAgMS00LjUtNC41di00MC41YTQuNSA0LjUgMCAwIDEgNC41LTQuNWg0MC41em0tMTMuNSAxOGwtOSAxMy41TDEyMiAxMzFsLTYuNzUgMTEuMjVoMzEuNWwtOS0xOHptLTEyLjM3NS02Ljc1YTMuMzc1IDMuMzc1IDAgMSAwIDAgNi43NSAzLjM3NSAzLjM3NSAwIDAgMCAwLTYuNzV6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=';
   let objImg = new Image();
-  objImg.src = src;
-  objImg.onload = () => {
-    setImageLoaded(true);
+  objImg.src = imageUrl;
+  objImg.onerror = () => {
+    setImageUrl(placeHolder);
   };
   let style = cleanObject({
     paddingBottom: !height ? `${100 / aspectRatio}%` : '',
     height: height ? `${height}px` : '',
     width: width ? `${width}px` : '',
   });
-  useEffect(() => {
-    setImageLoaded(false);
-    // eslint-disable-next-line
-  }, [window.location.href]);
+
   return (
-    <div onClick={onClick} className={cx('image')}>
+    <div style={style} onClick={onClick} className={cx('image', className)}>
       <div className={cx('sizer')}></div>
       <div
-        className={cx(
-          className,
-          { cover: !contain },
-          { contain: contain },
-          '__image',
-        )}
+        className={cx({ cover: !contain }, { contain: contain }, '__image', {
+          border,
+        })}
         style={{
-          backgroundImage: `url('${src}')`,
+          backgroundImage: `url('${imageUrl}')`,
           backgroundPosition: 'center center',
         }}
       ></div>
-      {!imageLoaded && <div className={cx('placeholder')}></div>}
-      <div style={style} className={cx('content')}></div>
+      <div className={cx('content')}></div>
     </div>
   );
 };
