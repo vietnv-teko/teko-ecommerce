@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
+import Ripple from '../Ripple';
 
 let cx = classNames.bind(styles);
 
@@ -30,7 +31,7 @@ const Button: React.FC<ButtonProps> = props => {
     onClick,
     size = 'medium',
     color = '#1669a8',
-    rippleColor = 'rgba(255, 255, 255, 0.4)',
+    rippleColor = 'rgba(255, 255, 255, 0.6)',
     variant = 'contained',
     rounded,
     icon,
@@ -44,26 +45,7 @@ const Button: React.FC<ButtonProps> = props => {
 
   const handleClick = (event: any) => {
     event.stopPropagation();
-    const button = event.target.parentElement;
-    const buttonPos = button.getBoundingClientRect();
-
-    const left = event.clientX - buttonPos.left;
-    const top = event.clientY - buttonPos.top;
-
-    const node = document.createElement('div');
-    node.className = cx('ripple');
-    node.style.top = `${top}px`;
-    node.style.left = `${left}px`;
-    node.style.backgroundColor = `${rippleColor}`;
-
-    let rippleContainer = button.querySelector(`.${cx('ripple_container')}`);
-    rippleContainer.appendChild(node);
-
     const currentTime = new Date().getTime();
-    setTimeout(() => {
-      rippleContainer.removeChild(node);
-    }, 400);
-
     if (onClick)
       setTimeout(() => {
         if (currentTime - time > 200) {
@@ -92,7 +74,7 @@ const Button: React.FC<ButtonProps> = props => {
       {...rest}
     >
       {children}
-      <div className={cx('ripple_container')} />
+      <Ripple color={rippleColor} />
     </button>
   );
 };

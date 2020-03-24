@@ -16,6 +16,7 @@ export { default as NewLink } from './components/Common/NewLink';
 export { default as Price } from './components/Common/Price';
 export { default as ProductItem } from './components/Common/ProductItem';
 export { default as RadioButton } from './components/Common/RadioButton';
+export { default as Ripple } from './components/Common/Ripple';
 
 // Mobile
 export { default as Appbar } from './components/Mobile/Appbar';
