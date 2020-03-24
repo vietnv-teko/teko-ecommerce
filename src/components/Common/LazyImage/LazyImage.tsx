@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './LazyImage.module.scss';
 import classNames from 'classnames/bind';
-import { cleanObject } from 'helpers';
+import { commonHelper } from 'helpers';
 
 let cx = classNames.bind(styles);
 export type LazyImageProps = {
@@ -54,7 +54,7 @@ const LazyImage = (props: LazyImageProps) => {
   objImg.onerror = () => {
     setImageUrl(placeHolder);
   };
-  let style = cleanObject({
+  let style = commonHelper.cleanObject({
     paddingBottom: !height ? `${100 / aspectRatio}%` : '',
     height: height ? `${height}px` : '',
     width: width ? `${width}px` : '',

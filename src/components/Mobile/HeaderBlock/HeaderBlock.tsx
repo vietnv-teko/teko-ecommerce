@@ -1,7 +1,7 @@
 import React from 'react';
 import classname from 'classnames/bind';
 import styles from './HeaderBlock.module.scss';
-import { cleanObject } from 'helpers';
+import { commonHelper } from 'helpers';
 let cx = classname.bind(styles);
 
 interface IHeaderBlock {
@@ -14,7 +14,7 @@ const HeaderBlock: React.FC<IHeaderBlock> = props => {
   return (
     <div
       {...rest}
-      style={cleanObject({
+      style={commonHelper.cleanObject({
         backgroundColor: backgroundColor,
       })}
       className={cx('header-block', className)}

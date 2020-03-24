@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Badge.module.scss';
-import { cleanObject } from 'helpers';
+import { commonHelper } from 'helpers';
 
 let cx = classNames.bind(styles);
 
@@ -31,7 +31,7 @@ const Badge: React.FC<IBadge> = props => {
       {!!value && (
         <span
           className={cx('badge', { scale: value > max })}
-          style={cleanObject({
+          style={commonHelper.cleanObject({
             backgroundColor: color,
             bottom: offsetY ? `calc(100% - ${offsetY}px)` : '',
             left: offsetX ? `calc(100% - ${offsetX}px)` : '',
