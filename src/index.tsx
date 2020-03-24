@@ -1,6 +1,7 @@
 // Common
 export { default as Badge } from './components/Common/Badge';
 export { default as Button } from './components/Common/Button';
+export * from './components/Common/Button';
 export { default as Checkbox } from './components/Common/Checkbox';
 export { default as Chip } from './components/Common/Chip';
 export { default as ContentLoader } from './components/Common/ContentLoader';
