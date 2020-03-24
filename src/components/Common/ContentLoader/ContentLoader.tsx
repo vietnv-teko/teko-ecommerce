@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ContentLoader.module.scss';
 import classNames from 'classnames/bind';
-import { cleanObject } from 'helpers';
+import { commonHelper } from 'helpers';
 
 let cx = classNames.bind(styles);
 
@@ -19,7 +19,7 @@ const ContentLoader: React.FC<ContentLoaderProps> = props => {
   return (
     <div
       className={cx('content-loader')}
-      style={cleanObject({
+      style={commonHelper.cleanObject({
         position: 'relative',
         maxWidth: '100%',
         paddingTop: `${height}` || '',

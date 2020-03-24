@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Tag.module.scss';
-import { cleanObject } from 'helpers';
+import { commonHelper } from 'helpers';
 
 let cx = classNames.bind(styles);
 
@@ -15,7 +15,7 @@ const Tag: React.FC<ITag> = props => {
   let { value, className, backgroundColor } = props;
   return (
     <span
-      style={cleanObject({
+      style={commonHelper.cleanObject({
         backgroundColor: backgroundColor ? backgroundColor : '',
       })}
       className={cx('tag', className)}

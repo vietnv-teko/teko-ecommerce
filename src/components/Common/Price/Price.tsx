@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Price.module.scss';
-import helper from 'helpers';
+import { commonHelper } from 'helpers';
 
 let cx = classNames.bind(styles);
 
@@ -14,7 +14,7 @@ interface IPrice {
 
 const Price: React.FC<IPrice> = props => {
   let { finalPrice, oldPrice, className, showDiscount } = props;
-  const { formatCurrency, getDiscountPercent } = helper;
+  const { formatCurrency, getDiscountPercent } = commonHelper;
   if (!finalPrice) {
     return null;
   }
